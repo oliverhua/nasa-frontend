@@ -49,7 +49,6 @@ function NavigationButtons() {
   );
 }
 
-
 function Home() {
   return (
     <div>
