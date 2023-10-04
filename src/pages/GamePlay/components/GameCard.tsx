@@ -1,9 +1,10 @@
 import React from "react";
 import { Card, Image } from "@nextui-org/react";
 import useDraggableCard from "@/hooks/useDraggableCard";
+// import { useLevel } from "@/contexts/LevelContext";
 
 interface GameCardProps {
-  src: string; 
+  src: string;
 }
 
 const GameCard: React.FC<GameCardProps> = ({ src }) => {

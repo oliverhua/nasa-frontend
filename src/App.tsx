@@ -1,16 +1,20 @@
 import VideoCanva from "./pages/VideoCanva/VideoCanva";
 import GamePlay from "./pages/GamePlay/GamePlay";
 import { Routes, Route, Outlet, Link, To } from "react-router-dom";
+import { LevelProvider } from "@/contexts/LevelContext";
+
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<NavigationButtons />}>
-        <Route index element={<Home />} />
-        <Route path="video" element={<VideoCanva />} />
-        <Route path="play" element={<GamePlay />} />
-        <Route path="*" element={<NoMatch />} />
-      </Route>
-    </Routes>
+    <LevelProvider>
+      <Routes>
+        <Route path="/" element={<NavigationButtons />}>
+          <Route index element={<Home />} />
+          <Route path="video" element={<VideoCanva />} />
+          <Route path="play" element={<GamePlay />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
+    </LevelProvider>
   );
 }
 import { useNavigate } from "react-router-dom";
@@ -25,7 +29,7 @@ function NavigationButtons() {
   return (
     <>
       <Outlet />
-      <div className="fixed inset-x-0 bottom-0 p-4 flex justify-center">
+      <div className="fixed inset-x-0 bottom-0 p-4 flex justify-end">
         <button
           onClick={() => handleButtonClick("/")}
           className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600"

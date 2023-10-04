@@ -1,14 +1,40 @@
 import { useState, useRef, useEffect } from "react";
 
+import { useLevel } from "@/contexts/LevelContext";
+
 const useDraggableCard = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [translation, setTranslation] = useState(0);
   const startPos = useRef(0);
   const [isMounted, setIsMounted] = useState(false);
+  const { level, nextLevel } = useLevel();
+  const [isNewLevel, setIsNewLevel] = useState(false);
+
+  const nextLevelCard = () => {
+    setIsMounted(false);
+    setTimeout(() => {
+      setIsNewLevel(true);
+      setTranslation(0);
+    }, 400);
+  }
 
   useEffect(() => {
+    if (isNewLevel) {
+      setIsMounted(false);
+      // setTranslation(0);
+      setTimeout(() => {
+        nextLevel();
+      }, 400);
+    }
+  }, [isNewLevel]);
+
+  useEffect(() => {
+    setIsNewLevel(false);
+    setIsDragging(false);
+    startPos.current = 0;
     setIsMounted(true);
-  }, []);
+  }, [level]);
+
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -27,8 +53,10 @@ const useDraggableCard = () => {
     setIsDragging(false);
     if (translation > 150) {
       setTranslation(window.innerWidth);
+      nextLevelCard();
     } else if (translation < -150) {
       setTranslation(-window.innerWidth);
+      nextLevelCard();
     } else {
       setTranslation(0);
     }
@@ -45,8 +73,8 @@ const useDraggableCard = () => {
 
   const rotation = translation / window.innerWidth * 45;
   const cardStyle = {
-    transform: `translateX(${translation}px) rotate(${rotation}deg)`,
-    transition: isDragging ? "none" : `transform 0.5s, opacity 3s`,
+    transform: isNewLevel ? "none" : `translateX(${translation}px) rotate(${rotation}deg)`,
+    transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: isMounted ? 1 : 0,
   };
 
