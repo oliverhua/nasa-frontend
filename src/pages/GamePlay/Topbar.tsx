@@ -1,9 +1,7 @@
 import { IoWater, IoStatsChart } from "react-icons/io5";
 FaTemperatureThreeQuarters;
 import { FaTemperatureThreeQuarters, FaDollarSign } from "react-icons/fa6";
-import React from "react";
 
-// Assuming you would later replace these with actual SVG or icon components
 const icons = {
   waterVolume: <IoWater size={72} />,
   waterQuality: <IoStatsChart size={72} />,

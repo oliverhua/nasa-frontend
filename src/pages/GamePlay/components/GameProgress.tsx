@@ -1,10 +1,8 @@
-import React from "react";
 import { levelData } from "@/assets/Storyline";
 
 import { Progress } from "@nextui-org/react";
 import { useLevel } from "@/contexts/LevelContext";
 export default function GameProgress() {
-  const [value, setValue] = React.useState(0);
   const { level, maxLevel } = useLevel();
   const title = levelData[level].levelTitle;
   return (
