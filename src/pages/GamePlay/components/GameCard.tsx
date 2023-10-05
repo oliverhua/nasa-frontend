@@ -1,8 +1,6 @@
-import { Card, Image , CardBody} from "@nextui-org/react";
+import { Card, Image, CardFooter, Button, CardBody } from "@nextui-org/react";
 import useDraggableCard from "@/hooks/useDraggableCard";
-// import useHint from "@hooks/useHint";
-// import { useLevel } from "@/contexts/LevelContext";
-
+import { BiBarChartSquare } from "react-icons/bi";
 interface GameCardProps {
   image_src: string;
   Hint_left: string;
@@ -29,6 +27,15 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
         className="z-0 w-full h-full scale-100 object-cover"
         src={image_src}
       />
+      <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        <div>
+          <p className="text-black text-xl font-bold">Ms. CO2</p>
+        </div>
+        <Button className="text-tiny" color="primary" radius="full" size="sm">
+          <BiBarChartSquare size={24} />
+          Infographs
+        </Button>
+      </CardFooter>
     </Card>
     </div>
     <div>
@@ -59,6 +66,15 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
         className="z-0 w-full h-full scale-100 object-cover"
         src={image_src}
       />
+      <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        <div>
+          <p className="text-black text-xl font-bold">Ms. CO2</p>
+        </div>
+        <Button className="text-tiny" color="primary" radius="full" size="sm">
+          <BiBarChartSquare size={24} />
+          Infographs
+        </Button>
+      </CardFooter>
     </Card>
     </div>
     <div>
@@ -88,6 +104,15 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
         className="z-0 w-full h-full scale-100 object-cover"
         src={image_src}
       />
+      <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+        <div>
+          <p className="text-black text-xl font-bold">Ms. CO2</p>
+        </div>
+        <Button className="text-tiny" color="primary" radius="full" size="sm">
+          <BiBarChartSquare size={24} />
+          Infographs
+        </Button>
+      </CardFooter>
     </Card>
     </div>
     <div>
