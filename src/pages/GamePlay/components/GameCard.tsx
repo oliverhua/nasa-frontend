@@ -1,6 +1,7 @@
 import { Card, Image, CardFooter, Button, CardBody,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter,useDisclosure } from "@nextui-org/react";
 import useDraggableCard from "@/hooks/useDraggableCard";
 import { BiBarChartSquare } from "react-icons/bi";
+
 interface GameCardProps {
   image_src: string;
   Hint_left: string;
@@ -43,11 +44,11 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
     <div>
         <div className="w-full h-full flex flex-col justify-center items-center">
           <Card 
-          className=" px-20 py-8 mx-2 bg-gray-300 rounded"
+          className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
           isPressable 
           style={HintStyle}>
-            <CardBody className="overflow-visible p-0">
-              <p>{Hint_right}</p>
+            <CardBody className="overflow-visible p-0 rounded-full">
+              <p className="text-xl">{Hint_right}</p>
             </CardBody>
           </Card>
           </div>
@@ -82,11 +83,11 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
     <div>
         <div className="w-full h-full flex flex-col justify-center items-center">
           <Card 
-          className=" px-20 py-8 mx-2 bg-gray-300 rounded"
+          className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
           isPressable 
           style={HintStyle}>
-            <CardBody className="overflow-visible p-0">
-              <p>{Hint_left}</p>
+            <CardBody className="overflow-visible p-0 rounded-full">
+              <p className="text-xl">{Hint_left}</p>
             </CardBody>
           </Card>
           </div>
@@ -150,16 +151,16 @@ const GameCard = ({image_src, Hint_left, Hint_right}: GameCardProps) => {
       </CardFooter>
     </Card>
     </div>
-    <div>
-        <div className="w-full h-full flex flex-col justify-center items-center">
-          <Card 
-          className=" px-20 py-8 mx-2 bg-gray-300 rounded"
-          isPressable 
-          style={HintStyle}>
-            <CardBody className="overflow-hidden p-0"> 
-              <p>Think wisely</p>
-            </CardBody>
-          </Card>
+        <div>
+          <div className="w-full h-full flex flex-col justify-center items-center">
+            <Card 
+            className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
+            isPressable 
+            style={HintStyle}>
+              <CardBody className="overflow-hidden p-0 rounded-full"> 
+                <p className="text-xl">Think wisely</p>
+              </CardBody>
+            </Card>
           </div>
         </div>
     </div>));

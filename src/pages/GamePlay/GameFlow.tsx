@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import GameCard from "./components/GameCard";
 import { useLevel } from "@/contexts/LevelContext";
-
+import "./GameFlow.css"
 import { levelData } from "@/assets/Storyline";
 // import {hintData} from "@/assets/Storyline";
 interface GameFlowProps {
@@ -35,22 +35,32 @@ export default function GameFlow({}: GameFlowProps): JSX.Element {
   }
   return (
     <div>
-    <div className="h-full w-full flex flex-col justify-center items-center">
-      <div className="h-32 w-4/6 flex justify-center items-center">
-        {/* Conditional rendering for the fade effect using Tailwind classes */}
-        <p
-          className={`font-mono text-3xl transition-opacity duration-150 ease-in-out ${
-            fadeIn ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          {currentMessage}
-        </p>
+      <div className="arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> 
+      <div className="h-full w-full flex flex-col justify-center items-center">
+        <div className="h-32 w-4/6 flex justify-center items-center">
+          {/* Conditional rendering for the fade effect using Tailwind classes */}
+          <p
+            className={`font-mono text-3xl transition-opacity duration-150 ease-in-out ${
+              fadeIn ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {currentMessage}
+          </p>
+        </div>
       </div>
-      </div>
+
       <div >
         <GameCard image_src={src_prop.image_src} Hint_left={src_prop.Hint_left} Hint_right={src_prop.Hint_right} />
       </div>
-    
+      <div className="arrow_two">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 }

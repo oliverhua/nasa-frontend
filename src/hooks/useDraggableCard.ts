@@ -49,18 +49,26 @@ const useDraggableCard = () => {
     const currentPos = event.clientX;
     const delta = currentPos - startPos.current;
     setTranslation(delta);
-    setHintOpacity(delta);
+    if(delta >= 50){
+      setHintOpacity(50);
+    }
+    else if(delta <= -50){
+      setHintOpacity(-50);
+    }
+    else{
+      setHintOpacity(delta);
+    }
     console.log("Opacity : " + delta);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
     // setIsReveal(false);
-    if (translation > 250) { // 右滑
+    if (translation > 300) { // 右滑
       setTranslation(window.innerWidth);
       nextLevelCard();
       setHintOpacity(0);
-    } else if (translation < -250) { // 左滑
+    } else if (translation < -300) { // 左滑
       setTranslation(-window.innerWidth);
       nextLevelCard();
       setHintOpacity(0);
