@@ -10,6 +10,8 @@ const useDraggableCard = () => {
   const { level, nextLevel } = useLevel();
   const [isNewLevel, setIsNewLevel] = useState(false);
 
+  // const [isReveal, setIsReveal] = useState(false); // using for hint of the choosing side.
+  const [HintOpacity, setHintOpacity] = useState(0);
   const nextLevelCard = () => {
     setIsMounted(false);
     setTimeout(() => {
@@ -47,18 +49,25 @@ const useDraggableCard = () => {
     const currentPos = event.clientX;
     const delta = currentPos - startPos.current;
     setTranslation(delta);
+    setHintOpacity(delta);
+    console.log("Opacity : " + delta);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    if (translation > 150) {
+    // setIsReveal(false);
+    if (translation > 250) { // 右滑
       setTranslation(window.innerWidth);
       nextLevelCard();
-    } else if (translation < -150) {
+      setHintOpacity(0);
+    } else if (translation < -250) { // 左滑
       setTranslation(-window.innerWidth);
       nextLevelCard();
+      setHintOpacity(0);
     } else {
       setTranslation(0);
+      // setIsReveal(false);
+      setHintOpacity(0);
     }
   };
 
@@ -66,19 +75,25 @@ const useDraggableCard = () => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove); 
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, translation]);
 
   const rotation = translation / window.innerWidth * 45;
+  const HintTranslation = translation>0? -translation:translation
   const cardStyle = {
     transform: isNewLevel ? "none" : `translateX(${translation}px) rotate(${rotation}deg)`,
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: isMounted ? 1 : 0,
   };
-
-  return { cardStyle, handleMouseDown };
+  const HintStyle = {
+    transform: isNewLevel ? "none" : `translateY(${HintTranslation}px) rotate(${rotation}deg)`,
+    transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
+    opacity: HintOpacity>0? HintOpacity/100 : -HintOpacity/100,
+    hint_src: translation==0? 0:HintOpacity>0? 1: HintOpacity<0? -1:0
+  }
+  return { HintStyle , cardStyle, handleMouseDown };
 };
 
 export default useDraggableCard;

@@ -54,6 +54,7 @@ function NavigationButtons() {
 }
 
 function Home() {
+  console.log("This is home")
   return (
     <div>
       <h2>Home</h2>

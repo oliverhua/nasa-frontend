@@ -3,6 +3,7 @@ import GameCard from "./components/GameCard";
 import { useLevel } from "@/contexts/LevelContext";
 
 import { levelData } from "@/assets/Storyline";
+// import {hintData} from "@/assets/Storyline";
 interface GameFlowProps {
   // level: number;
 }
@@ -26,8 +27,14 @@ export default function GameFlow({}: GameFlowProps): JSX.Element {
   if (!data) {
     return <p>Invalid level</p>;
   }
+  const src_prop = {
+    image_src: data.imageSrc,
+    Hint_left: data.Hint_left,
+    Hint_right: data.Hint_right
 
+  }
   return (
+    <div>
     <div className="h-full w-full flex flex-col justify-center items-center">
       <div className="h-32 w-4/6 flex justify-center items-center">
         {/* Conditional rendering for the fade effect using Tailwind classes */}
@@ -39,9 +46,11 @@ export default function GameFlow({}: GameFlowProps): JSX.Element {
           {currentMessage}
         </p>
       </div>
-      <div className="w-80 h-96 mt-24">
-        <GameCard src={data.imageSrc} />
       </div>
+      <div >
+        <GameCard image_src={src_prop.image_src} Hint_left={src_prop.Hint_left} Hint_right={src_prop.Hint_right} />
+      </div>
+    
     </div>
   );
 }

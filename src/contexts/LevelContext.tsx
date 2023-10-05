@@ -20,7 +20,7 @@ export const LevelProvider: React.FC<LevelProviderProps> = ({ children }) => {
 
   const nextLevel = () => {
     setLevel((prevLevel) => {
-      if (prevLevel >= maxLevel) {
+      if (prevLevel >= maxLevel) { // 重置
         return 1;
       } else {
         return prevLevel + 1;
