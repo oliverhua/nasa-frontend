@@ -13,8 +13,8 @@ const useDraggableCard = () => {
   const [isNewLevel, setIsNewLevel] = useState(false);
   const [choice, setChoice] = useState("No");
 
-  const [HintOpacity, setHintOpacity] = useState(0);
-  const [circleH, setcircleH] = useState("h-0");
+  const [hintOpacity, setHintOpacity] = useState(0);
+  const [circleH, setCircleH] = useState("h-0");
   const nextLevelCard = () => {
     setIsMounted(false);
     setTimeout(() => {
@@ -59,13 +59,13 @@ const useDraggableCard = () => {
     } else {
       setHintOpacity(delta);
     }
-    setcircleH(() => {
+    setCircleH(() => {
       return translation == 0
         ? "h-0"
         : delta < 0
-        ? "h-" + levelData[level].getleftscore.waterVolume
+        ? "h-" + levelData[level].leftScore.waterVolume
         : delta > 0
-        ? "h-" + levelData[level].getrightscore.waterVolume
+        ? "h-" + levelData[level].rightScore.waterVolume
         : "h-0";
     });
     console.log("Opacity : " + delta);
@@ -81,18 +81,18 @@ const useDraggableCard = () => {
       setChoice("right");
       nextLevelCard();
       setHintOpacity(0);
-      setcircleH("h-0");
+      setCircleH("h-0");
     } else if (translation < -300) {
       // 左滑
       setTranslation(-window.innerWidth);
       setChoice("left");
       nextLevelCard();
       setHintOpacity(0);
-      setcircleH("h-0");
+      setCircleH("h-0");
     } else {
       setTranslation(0);
       setHintOpacity(0);
-      setcircleH("h-0");
+      setCircleH("h-0");
     }
   };
 
@@ -106,7 +106,7 @@ const useDraggableCard = () => {
   }, [isDragging, translation]);
 
   const rotation = (translation / window.innerWidth) * 45;
-  const HintTranslation = translation > 0 ? -translation : translation;
+  const hintTranslation = translation > 0 ? -translation : translation;
   const cardStyle = {
     transform: isNewLevel
       ? "none"
@@ -114,21 +114,21 @@ const useDraggableCard = () => {
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: isMounted ? 1 : 0,
   };
-  const HintStyle = {
+  const hintStyle = {
     transform: isNewLevel
       ? "none"
-      : `translateY(${HintTranslation}px) rotate(${rotation}deg)`,
+      : `translateY(${hintTranslation}px) rotate(${rotation}deg)`,
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
-    opacity: HintOpacity > 0 ? HintOpacity / 100 : -HintOpacity / 100,
-    hint_src:
-      translation == 0 ? 0 : HintOpacity > 0 ? 1 : HintOpacity < 0 ? -1 : 0,
+    opacity: hintOpacity > 0 ? hintOpacity / 100 : -hintOpacity / 100,
+    hintSrc:
+      translation == 0 ? 0 : hintOpacity > 0 ? 1 : hintOpacity < 0 ? -1 : 0,
   };
   // const circleStyle = {
-  //   circleH: translation==0? "h-0": HintOpacity<0? "h-" + levelData[level].getleftscore.waterVolume :  HintOpacity>0? "h-" + levelData[level].getrightscore.waterVolume : "h-0",
-  //   circleW: translation==0? "w-0": HintOpacity<0? "w-" + levelData[level].getleftscore.waterVolume :  HintOpacity>0? "w-" + levelData[level].getrightscore.waterVolume :  "w-0"
+  //   circleH: translation==0? "h-0": hintOpacity<0? "h-" + levelData[level].leftScore.waterVolume :  hintOpacity>0? "h-" + levelData[level].rightScore.waterVolume : "h-0",
+  //   circleW: translation==0? "w-0": hintOpacity<0? "w-" + levelData[level].leftScore.waterVolume :  hintOpacity>0? "w-" + levelData[level].rightScore.waterVolume :  "w-0"
   // }
 
-  return { HintStyle, cardStyle, handleMouseDown, circleH };
+  return { hintStyle, cardStyle, handleMouseDown, circleH };
 };
 
 export default useDraggableCard;

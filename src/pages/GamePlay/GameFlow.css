@@ -2,7 +2,7 @@ body {
   background-color: #322b2b;
 }
 
-.arrow {
+.arrow-left {
   position: absolute;
   top: 50%;
   left: 30%;
@@ -10,7 +10,7 @@ body {
   transform: rotate(90deg);
   cursor: pointer;
 }
-.arrow_two {
+.arrow-right {
   position: absolute;
   top: 50%;
   right: 30%;
@@ -18,7 +18,7 @@ body {
   transform: rotate(270deg);
   cursor: pointer;
 }
-.arrow span {
+.arrow-left span {
   display: block;
   width: 2.5vw;
   height: 2.5vw;
@@ -28,7 +28,7 @@ body {
   margin: -10px;
   animation: animate 2s infinite;
 }
-.arrow_two span {
+.arrow-right span {
   display: block;
   width: 2.5vw;
   height: 2.5vw;
@@ -39,19 +39,19 @@ body {
   animation: animate 2s infinite;
 }
 
-.arrow span:nth-child(2) {
+.arrow-left span:nth-child(2) {
   animation-delay: -0.2s;
 }
 
-.arrow span:nth-child(3) {
+.arrow-left span:nth-child(3) {
   animation-delay: -0.4s;
 }
 
-.arrow_two span:nth-child(2) {
+.arrow-right span:nth-child(2) {
   animation-delay: -0.2s;
 }
 
-.arrow_two span:nth-child(3) {
+.arrow-right span:nth-child(3) {
   animation-delay: -0.4s;
 }
 

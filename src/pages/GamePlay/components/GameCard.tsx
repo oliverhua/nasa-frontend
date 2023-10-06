@@ -15,15 +15,15 @@ import useDraggableCard from "@/hooks/useDraggableCard";
 import { BiBarChartSquare } from "react-icons/bi";
 
 interface GameCardProps {
-  image_src: string;
-  Hint_left: string;
-  Hint_right: string;
+  imageSrc: string;
+  hintLeft: string;
+  hintRight: string;
 }
 
-const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
-  const { HintStyle, cardStyle, handleMouseDown } = useDraggableCard();
+const GameCard = ({ imageSrc, hintLeft, hintRight }: GameCardProps) => {
+  const { hintStyle, cardStyle, handleMouseDown } = useDraggableCard();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  return HintStyle.hint_src > 0 ? (
+  return hintStyle.hintSrc > 0 ? (
     <div>
       <div className="w-full h-full mt-24 flex flex-col justify-center items-center">
         <Card
@@ -36,7 +36,7 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
             removeWrapper
             alt="Card example background"
             className="z-0 w-full h-full scale-100 object-cover"
-            src={image_src}
+            src={imageSrc}
           />
           <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
             <div>
@@ -60,16 +60,16 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
           <Card
             className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
             isPressable
-            style={HintStyle}
+            style={hintStyle}
           >
             <CardBody className="overflow-visible p-0 rounded-full">
-              <p className="text-xl">{Hint_right}</p>
+              <p className="text-xl">{hintRight}</p>
             </CardBody>
           </Card>
         </div>
       </div>
     </div>
-  ) : HintStyle.hint_src < 0 ? (
+  ) : hintStyle.hintSrc < 0 ? (
     <div>
       <div className="w-full h-full mt-24 flex flex-col justify-center items-center">
         <Card
@@ -82,7 +82,7 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
             removeWrapper
             alt="Card example background"
             className="z-0 w-full h-full scale-100 object-cover"
-            src={image_src}
+            src={imageSrc}
           />
           <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
             <div>
@@ -105,10 +105,10 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
           <Card
             className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
             isPressable
-            style={HintStyle}
+            style={hintStyle}
           >
             <CardBody className="overflow-visible p-0 rounded-full">
-              <p className="text-xl">{Hint_left}</p>
+              <p className="text-xl">{hintLeft}</p>
             </CardBody>
           </Card>
         </div>
@@ -127,7 +127,7 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
             removeWrapper
             alt="Card example background"
             className="z-0 w-full h-full scale-100 object-cover"
-            src={image_src}
+            src={imageSrc}
           />
           <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
             <div>
@@ -190,7 +190,7 @@ const GameCard = ({ image_src, Hint_left, Hint_right }: GameCardProps) => {
           <Card
             className=" px-20 py-8 mx-2 bg-gray-100 rounded-full"
             isPressable
-            style={HintStyle}
+            style={hintStyle}
           >
             <CardBody className="overflow-hidden p-0 rounded-full">
               <p className="text-xl">Think wisely</p>

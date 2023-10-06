@@ -1,157 +1,160 @@
-interface LevelDataStructure {
-  message: string;
-  imageSrc: string;
-  levelTitle: string;
-  Hint_right: string;
-  Hint_left: string;
-  getleftscore: {
-    waterVolume: number;
-    waterQuality: number;
-    temperature: number;
-    engineeringBudget: number;
-  };
-  getrightscore: {
-    waterVolume: number;
-    waterQuality: number;
-    temperature: number;
-    engineeringBudget: number;
-  };
-  nextleftlevel: number;
-  nextrightlevel: number;
-}
-
-export const levelData: Record<number, LevelDataStructure> = {
+export const levelData: Record<number, LevelDataType> = {
   1: {
     message:
       "Please suggest that your subjects send noble daughters to our temple... New blood is needed to keep the faith of the land!",
     imageSrc: "./src/assets/images/1.png",
-    levelTitle: "雨水",
-    Hint_right: "Jerry is so fat",
-    Hint_left: "Jerry is so stupid ",
-    getleftscore: {
+    levelTitle: "Rain",
+    hintRight: "Jerry is so fat",
+    hintLeft: "Jerry is so stupid ",
+    leftScore: {
       waterVolume: 5,
       waterQuality: 5,
       temperature: 5,
       engineeringBudget: 5,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 7,
       waterQuality: 7,
       temperature: 7,
       engineeringBudget: 7,
     },
-    nextleftlevel: 3,
-    nextrightlevel: 2,
+    nextLeftLevel: 3,
+    nextRightLevel: 2,
   },
   2: {
     message:
       "Angel consistently brings a unique perspective and unmatched dedication to the team. We are fortunate to have someone as talented and committed as Angel.",
     imageSrc: "./src/assets/images/2.png",
-    levelTitle: "河川",
-    Hint_right: "Jerry is so stupid",
-    Hint_left: "Jerry is so fat ",
-    getleftscore: {
+    levelTitle: "River",
+    hintRight: "Jerry is so stupid",
+    hintLeft: "Jerry is so fat ",
+    leftScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    nextleftlevel: 4,
-    nextrightlevel: 5,
+    nextLeftLevel: 4,
+    nextRightLevel: 5,
   },
   3: {
     message:
       "Please suggest that your subjects send noble daughters to our temple... New blood is needed to keep the faith of the land!",
     imageSrc: "./src/assets/images/1.png",
-    levelTitle: "地下水",
-    Hint_right: "Jerry is so fat",
-    Hint_left: "Jerry is so stupid",
-    getleftscore: {
+    levelTitle: "Ground Water",
+    hintRight: "Jerry is so fat",
+    hintLeft: "Jerry is so stupid",
+    leftScore: {
       waterVolume: 8,
       waterQuality: 8,
       temperature: 8,
       engineeringBudget: 8,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    nextleftlevel: 4,
-    nextrightlevel: 5,
+    nextLeftLevel: 4,
+    nextRightLevel: 5,
   },
   4: {
     message:
       "Angel consistently brings a unique perspective and unmatched dedication to the team. We are fortunate to have someone as talented and committed as Angel.",
     imageSrc: "./src/assets/images/2.png",
-    levelTitle: "海洋",
-    Hint_right: "Jerry is so fat",
-    Hint_left: "Jerry is so stupid",
-    getleftscore: {
+    levelTitle: "Ocean",
+    hintRight: "Jerry is so fat",
+    hintLeft: "Jerry is so stupid",
+    leftScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    nextleftlevel: 6,
-    nextrightlevel: -1,
+    nextLeftLevel: 6,
+    nextRightLevel: -1,
   },
   5: {
     message:
       "Please suggest that your subjects send noble daughters to our temple... New blood is needed to keep the faith of the land!",
     imageSrc: "./src/assets/images/1.png",
-    levelTitle: "雲朵",
-    Hint_right: "Jerry is so fat",
-    Hint_left: "Jerry is so stupid",
-    getleftscore: {
+    levelTitle: "Cloud",
+    hintRight: "Jerry is so fat",
+    hintLeft: "Jerry is so stupid",
+    leftScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    nextleftlevel: -1,
-    nextrightlevel: 6,
+    nextLeftLevel: -1,
+    nextRightLevel: 6,
   },
   6: {
     message:
       "Angel consistently brings a unique perspective and unmatched dedication to the team. We are fortunate to have someone as talented and committed as Angel.",
     imageSrc: "./src/assets/images/2.png",
-    levelTitle: "雪",
-    Hint_right: "Jerry is a pig",
-    Hint_left: "Jerry is so stupid",
-    getleftscore: {
+    levelTitle: "Snow",
+    hintRight: "Jerry is a pig",
+    hintLeft: "Jerry is so stupid",
+    leftScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    getrightscore: {
+    rightScore: {
       waterVolume: 0,
       waterQuality: 0,
       temperature: 0,
       engineeringBudget: 0,
     },
-    nextleftlevel: -1,
-    nextrightlevel: -1,
+    nextLeftLevel: -1,
+    nextRightLevel: -1,
   },
 };
+
 // -1 = end
+export type levelNumType = keyof typeof levelData;
+
+export type ScoreType = {
+  waterVolume: number;
+  waterQuality: number;
+  temperature: number;
+  engineeringBudget: number;
+};
+
+export type ScoreAttribute = keyof ScoreType;
+interface LevelDirections {
+  hintRight: string;
+  hintLeft: string;
+  nextLeftLevel: number;
+  nextRightLevel: number;
+}
+
+interface LevelDataType extends LevelDirections {
+  message: string;
+  imageSrc: string;
+  levelTitle: string;
+  leftScore: ScoreType;
+  rightScore: ScoreType;
+}

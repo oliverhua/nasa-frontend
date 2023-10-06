@@ -73,7 +73,7 @@ const maxScores = {
 // }
 
 const Topbar = () => {
-  const { HintStyle } = useDraggableCard();
+  const { hintStyle } = useDraggableCard();
   const { waterQuality, waterVolume, temperature, engineeringBudget } =
     useLevel();
   const { level } = useLevel();
@@ -81,20 +81,20 @@ const Topbar = () => {
   // const [w, setW] = useState(circleStyle.circleW);
 
   // const scoreCircle = {
-  //   h: HintStyle.hint_src==0? "h-0": HintStyle.hint_src<0? "h-" + levelData[level].getleftscore.waterVolume : "h-" + levelData[level].getrightscore.waterVolume,
-  //   w: HintStyle.hint_src==0? "w-0": HintStyle.hint_src<0? "w-" + levelData[level].getleftscore.waterVolume : "w-" + levelData[level].getrightscore.waterVolume,
+  //   h: hintStyle.hintSrc==0? "h-0": hintStyle.hintSrc<0? "h-" + levelData[level].leftScore.waterVolume : "h-" + levelData[level].rightScore.waterVolume,
+  //   w: hintStyle.hintSrc==0? "w-0": hintStyle.hintSrc<0? "w-" + levelData[level].leftScore.waterVolume : "w-" + levelData[level].rightScore.waterVolume,
   // }
   // setH(()=>{
-  //   return HintStyle.hint_src==0? "h-0": HintStyle.hint_src<0? "h-" + levelData[level].getleftscore.waterVolume : "h-" + levelData[level].getrightscore.waterVolume;
+  //   return hintStyle.hintSrc==0? "h-0": hintStyle.hintSrc<0? "h-" + levelData[level].leftScore.waterVolume : "h-" + levelData[level].rightScore.waterVolume;
   // })
   // setW(()=>{
-  //   return HintStyle.hint_src==0? "w-0": HintStyle.hint_src<0? "w-" + levelData[level].getleftscore.waterVolume : "w-" + levelData[level].getrightscore.waterVolume;
+  //   return hintStyle.hintSrc==0? "w-0": hintStyle.hintSrc<0? "w-" + levelData[level].leftScore.waterVolume : "w-" + levelData[level].rightScore.waterVolume;
   // })
   // useEffect(()=>{
   // 	setW(circleStyle.circleW);
   // }, [])
 
-  return HintStyle.hint_src < 0 ? (
+  return hintStyle.hintSrc < 0 ? (
     <div className="h-full flex items-center justify-around">
       <div className="flex  justify-around content-stretch w-60">
         <div className="">{icons.waterVolume}</div>
@@ -102,10 +102,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getleftscore.waterVolume +
+              levelData[level].leftScore.waterVolume +
               " " +
               "w-" +
-              levelData[level].getleftscore.waterVolume +
+              levelData[level].leftScore.waterVolume +
               " bg-black rounded-full"
             }
           ></div>
@@ -119,10 +119,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getleftscore.waterQuality +
+              levelData[level].leftScore.waterQuality +
               " " +
               "w-" +
-              levelData[level].getleftscore.waterQuality +
+              levelData[level].leftScore.waterQuality +
               " bg-black rounded-full"
             }
           ></div>
@@ -136,10 +136,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getleftscore.temperature +
+              levelData[level].leftScore.temperature +
               " " +
               "w-" +
-              levelData[level].getleftscore.temperature +
+              levelData[level].leftScore.temperature +
               " bg-black rounded-full"
             }
           ></div>
@@ -153,10 +153,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getleftscore.engineeringBudget +
+              levelData[level].leftScore.engineeringBudget +
               " " +
               "w-" +
-              levelData[level].getleftscore.engineeringBudget +
+              levelData[level].leftScore.engineeringBudget +
               " bg-black rounded-full"
             }
           ></div>
@@ -175,10 +175,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getrightscore.waterVolume +
+              levelData[level].rightScore.waterVolume +
               " " +
               "w-" +
-              levelData[level].getrightscore.waterVolume +
+              levelData[level].rightScore.waterVolume +
               " bg-black rounded-full"
             }
           ></div>
@@ -192,10 +192,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getrightscore.waterQuality +
+              levelData[level].rightScore.waterQuality +
               " " +
               "w-" +
-              levelData[level].getrightscore.waterQuality +
+              levelData[level].rightScore.waterQuality +
               " bg-black rounded-full"
             }
           ></div>
@@ -209,10 +209,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getrightscore.temperature +
+              levelData[level].rightScore.temperature +
               " " +
               "w-" +
-              levelData[level].getrightscore.temperature +
+              levelData[level].rightScore.temperature +
               " bg-black rounded-full"
             }
           ></div>
@@ -226,10 +226,10 @@ const Topbar = () => {
           <div
             className={
               "h-" +
-              levelData[level].getleftscore.engineeringBudget +
+              levelData[level].leftScore.engineeringBudget +
               " " +
               "w-" +
-              levelData[level].getleftscore.engineeringBudget +
+              levelData[level].leftScore.engineeringBudget +
               " bg-black rounded-full"
             }
           ></div>
