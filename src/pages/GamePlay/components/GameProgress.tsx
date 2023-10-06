@@ -1,11 +1,11 @@
-import { levelData } from "@/assets/Storyline";
+// import { levelData } from "@/assets/Storyline";
 
-import { Progress, Chip } from "@nextui-org/react";
+import { Chip } from "@nextui-org/react";
 import { useLevel } from "@/contexts/LevelContext";
 
 export default function GameProgress() {
-  const { level, maxLevel } = useLevel();
-  const title = levelData[level].levelTitle;
+  const { level } = useLevel();
+  // const title = levelData[level].levelTitle;
   return (
     <div className=" h-full bg-yellow-950 flex items-center justify-around">
       {/* <Progress

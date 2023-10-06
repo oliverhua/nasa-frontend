@@ -13,8 +13,8 @@ const ScoreBar: React.FC<ScoreBarProps> = ({ score, maxScore }) => {
   const percentage = (score / maxScore) * 100;
 
   return (
-    <div className="score-bar">
-      <Progress value={percentage} maxValue={100} color="warning"  />
+    <div>
+      <Progress value={percentage} maxValue={100} color="warning" className="max-w-md " size="lg" />
     </div>
   );
 };
