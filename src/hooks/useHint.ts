@@ -19,9 +19,9 @@
 //     return (
 //         <div>
 //         <div className="w-full h-full flex flex-col justify-center items-center">
-//         <Card 
+//         <Card
 //         className=" px-20 py-4 mx-2 bg-gray-300 text-white rounded"
-//         isPressable 
+//         isPressable
 //         style={HintStyle}>
 //         <CardBody className="overflow-visible p-0">
 //           <p>Hi my name is andy</p>

@@ -3,8 +3,6 @@ import Topbar from "./Topbar";
 import GameProgress from "./components/GameProgress";
 
 export default function Play() {
-
-  
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden">
       <div className="h-40 bg-yellow-950">

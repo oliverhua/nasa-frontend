@@ -26,9 +26,9 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    light:{
+    light: {
       colors: {
-        zinc:'#D4D4D8'
+        zinc: "#D4D4D8",
       },
     },
     extend: {

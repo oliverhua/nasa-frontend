@@ -6,7 +6,8 @@ import { preloadVideo } from "@/components/VideoPlayer";
 
 const useVideoController = () => {
   const playerRef = useRef<ReactPlayer>(null);
-  const [currentVideo, setCurrentVideo] = useState<VideoStateType>("NotPlaying");
+  const [currentVideo, setCurrentVideo] =
+    useState<VideoStateType>("NotPlaying");
   const [hide, setHide] = useState(false);
   const [hasClicked, setHasClicked] = useState(false);
 
@@ -48,8 +49,12 @@ const useVideoController = () => {
     const currentTime = playerRef.current?.getCurrentTime();
     if (!currentTime) return;
 
-    const percentage = ((e.clientX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth) * 100;
-    const selection = percentage > 51 ? "right" : percentage < 49 ? "left" : "middle";
+    const percentage =
+      ((e.clientX - e.currentTarget.getBoundingClientRect().left) /
+        e.currentTarget.offsetWidth) *
+      100;
+    const selection =
+      percentage > 51 ? "right" : percentage < 49 ? "left" : "middle";
 
     // if (currentVideo === "Initial") {
     //   switchVideo("PlaceTrash");
