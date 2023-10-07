@@ -7,18 +7,15 @@ import { useParams } from "react-router-dom";
 const App = () => {
   const { videoName } = useParams<{ videoName: VideoStateType }>();
   const videoToPlay = videoName ?? "NotPlaying";
-  const {
-    playerRef,
-    currentVideo,
-    hide,
-    handlePlayerClick,
-    onVideoEnd
-  } = useVideoController(videoToPlay);
+  const { playerRef, currentVideo, hide, onVideoEnd } =
+    useVideoController(videoToPlay);
 
-  console.log(currentVideo);
   return (
     <>
-      <div onClick={handlePlayerClick}>
+      <div
+        className="w-screen h-screen flex justify-center items-center"
+        // onClick={handlePlayerClick}
+      >
         <VideoPlayer
           videoUrl={videoDict[currentVideo]}
           hide={hide}

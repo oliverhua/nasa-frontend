@@ -22,7 +22,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   playerRef,
   onEnded,
 }) => {
-  const [playing, setPlaying] = useState(true);
   return (
     // <div
     //   className={`transition-opacity ease-in-out duration-1000 ${
@@ -35,12 +34,11 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         url={videoUrl}
         width="100%"
         height="100%"
-        playbackRate={2}
+        playbackRate={1}
         loop={false}
         muted={false}
         onEnded={onEnded}
       />
-    // </div>
   );
 };
 
