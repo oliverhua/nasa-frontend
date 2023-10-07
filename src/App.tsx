@@ -1,5 +1,6 @@
 import VideoCanva from "./pages/VideoCanva/VideoCanva";
 import GamePlay from "./pages/GamePlay/GamePlay";
+import Result from "./pages/ResultPage/Result";
 import { Routes, Route, Outlet, Link, To } from "react-router-dom";
 import { LevelProvider } from "@/contexts/LevelContext";
 
@@ -12,6 +13,7 @@ function App() {
           <Route path="video/:videoName" element={<VideoCanva />} />
           <Route path="play" element={<GamePlay />} />
           <Route path="*" element={<NoMatch />} />
+          <Route path="result" element={<Result/>} />
         </Route>
       </Routes>
     </LevelProvider>
@@ -47,6 +49,12 @@ function NavigationButtons() {
           className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Card
+        </button>
+        <button
+          onClick={() => handleButtonClick("/result")}
+          className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Result
         </button>
       </div>
     </>
