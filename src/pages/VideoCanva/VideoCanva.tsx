@@ -1,36 +1,32 @@
-import VideoPlayer from "../../components/VideoPlayer";
+import VideoPlayer from "./components/VideoPlayer";
 import { videoDict, VideoStateType } from "@/assets/VideoCollection";
-import ControlButton from "../../components/ControlButton";
+import ControlButton from "./components/ControlButton";
 import useVideoController from "@/hooks/useVideoController";
+import { useParams } from "react-router-dom";
 
 const App = () => {
+  const { videoName } = useParams<{ videoName: VideoStateType }>();
+  const videoToPlay = videoName ?? "NotPlaying";
   const {
     playerRef,
     currentVideo,
     hide,
     handlePlayerClick,
-    onVideoEnd,
-    updateCurrentVideo,
-  } = useVideoController();
+    onVideoEnd
+  } = useVideoController(videoToPlay);
 
+  console.log(currentVideo);
   return (
     <>
       <div onClick={handlePlayerClick}>
         <VideoPlayer
-          videoUrl={videoDict[currentVideo as VideoStateType]}
+          videoUrl={videoDict[currentVideo]}
           hide={hide}
           playerRef={playerRef}
           onEnded={onVideoEnd}
         />
       </div>
-      <ControlButton
-        currentVideo={currentVideo}
-        onButtonClick={() =>
-          updateCurrentVideo(
-            currentVideo === "NotPlaying" ? "Initial" : "NotPlaying"
-          )
-        }
-      />
+      <ControlButton onButtonClick={onVideoEnd} />
     </>
   );
 };

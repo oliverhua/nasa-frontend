@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { videoDict, VideoStateType } from "../assets/VideoCollection";
+import { videoDict, VideoStateType } from "../../../assets/VideoCollection";
 interface VideoPlayerProps {
   hide: boolean;
   videoUrl: string;
@@ -23,29 +23,24 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   onEnded,
 }) => {
   const [playing, setPlaying] = useState(true);
-
   return (
-    <div
-      className={`transition-opacity ease-in-out duration-1000 ${
-        hide ? "opacity-0" : "opacity-100"
-      }`}
-    >
+    // <div
+    //   className={`transition-opacity ease-in-out duration-1000 ${
+    //     hide ? "opacity-0" : "opacity-100"
+    //   }`}
+    // >
       <ReactPlayer
-        playing={playing}
+        playing={true}
         ref={playerRef}
         url={videoUrl}
         width="100%"
         height="100%"
-        playbackRate={1}
-        // loop={true}
-        onReady={() => {
-          setPlaying(false);
-          console.log(videoUrl);
-          setPlaying(true);
-        }}
+        playbackRate={2}
+        loop={false}
+        muted={false}
         onEnded={onEnded}
       />
-    </div>
+    // </div>
   );
 };
 

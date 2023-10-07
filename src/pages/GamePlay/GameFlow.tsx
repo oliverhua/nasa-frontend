@@ -30,6 +30,13 @@ export default function GameFlow(): JSX.Element {
         <span></span>
         <span></span>
       </div>
+
+      <div className="arrow-right">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
       <div className="h-full w-full flex flex-col justify-center items-center">
         <div className="h-32 w-4/6 flex justify-center items-center">
           <p
@@ -48,11 +55,6 @@ export default function GameFlow(): JSX.Element {
           hintLeft={data.hintLeft}
           hintRight={data.hintRight}
         />
-      </div>
-      <div className="arrow-right">
-        <span></span>
-        <span></span>
-        <span></span>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ interface LevelContextType {
   level: levelNumType;
   maxLevel: number;
   setLevel: React.Dispatch<React.SetStateAction<number>>;
-  nextLevel: (choice: string) => void;
+  nextLevel: (choice: "left" | "right") => void;
   waterVolume: number;
   waterQuality: number;
   temperature: number;

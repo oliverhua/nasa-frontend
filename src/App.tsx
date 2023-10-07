@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavigationButtons />}>
           <Route index element={<Home />} />
-          <Route path="video" element={<VideoCanva />} />
+          <Route path="video/:videoName" element={<VideoCanva />} />
           <Route path="play" element={<GamePlay />} />
           <Route path="*" element={<NoMatch />} />
         </Route>

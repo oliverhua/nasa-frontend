@@ -1,11 +1,11 @@
 export const levelData: Record<number, LevelDataType> = {
   1: {
     message:
-      "Please suggest that your subjects send noble daughters to our temple... New blood is needed to keep the faith of the land!",
+      "Sweet sweet raindrop, would you like to team up with me?",
     imageSrc: "./src/assets/images/1.png",
     levelTitle: "Rain",
-    hintRight: "Jerry is so fat",
-    hintLeft: "Jerry is so stupid ",
+    hintRight: "Yes",
+    hintLeft: "No",
     leftScore: {
       waterVolume: 5,
       waterQuality: 5,
