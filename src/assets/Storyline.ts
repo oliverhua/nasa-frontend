@@ -6,18 +6,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "Rain",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: 2,
     nextRightLevel: 2,
   },
@@ -28,18 +16,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "Rain",
     hintRight: "Nope, solo adventure for me!",
     hintLeft: "Yay!Team up time!",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: -10,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 5,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: 4,
     nextRightLevel: 3,
   },
@@ -50,18 +26,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "Rain",
     hintRight: "Mr. NO2",
     hintLeft: "Ms. CO2",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: -10,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: +5,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: 4,
     nextRightLevel: 4,
   },
@@ -72,18 +36,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "Rain",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: 5,
     nextRightLevel: 5,
   },
@@ -94,18 +46,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "Rain",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: 6,
     nextRightLevel: 6,
   },
@@ -116,18 +56,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -138,18 +66,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Up. See the glacier!!",
     hintLeft: "Down. To the lake!",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -160,18 +76,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -182,18 +86,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -204,18 +96,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -226,18 +106,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -248,18 +116,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -270,18 +126,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -292,18 +136,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -314,18 +146,6 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
@@ -336,34 +156,11 @@ export const levelData: Record<number, LevelDataType> = {
     levelTitle: "River",
     hintRight: "Got it!",
     hintLeft: "Okay~",
-    leftScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
-    rightScore: {
-      waterVolume: 0,
-      waterQuality: 0,
-      temperature: 0,
-      engineeringBudget: 0,
-    },
     nextLeftLevel: -1,
     nextRightLevel: -1,
   },
 };
 
-// -1 = end
-export type levelNumType = keyof typeof levelData;
-
-export type ScoreType = {
-  waterVolume: number;
-  waterQuality: number;
-  temperature: number;
-  engineeringBudget: number;
-};
-
-export type ScoreAttribute = keyof ScoreType;
 interface LevelDirections {
   hintRight: string;
   hintLeft: string;
@@ -375,6 +172,4 @@ interface LevelDataType extends LevelDirections {
   message: string;
   imageSrc: string;
   levelTitle: string;
-  leftScore: ScoreType;
-  rightScore: ScoreType;
 }

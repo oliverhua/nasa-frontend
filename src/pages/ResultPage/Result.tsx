@@ -3,7 +3,7 @@ import {Image} from "@nextui-org/react";
 export default function Result(){
     return (
     <div className=" ">
-        <div className="h-screen w-screen bg-cover bg-no-repeat" style={{ background:`url(${background})`}}>
+        <div className="h-screen w-screen bg-cover bg-no-repeat bg-cover bg-[url('./src/assets/images/StageCardImage/Stage=Ocean.png')]" >
             <div></div>
             <div></div>
         </div>

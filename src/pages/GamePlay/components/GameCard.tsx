@@ -114,6 +114,8 @@ const GameCard = ({ imageSrc, hintLeft, hintRight }: GameCardProps) => {
 
   return (
     <>
+    <HintCard text={hintToDisplay} style={hintStyle} />
+    <HintCard text={hintToDisplay} style={hintStyle} />
       <MainCard
         cardName="Ms.CO2"
         imageSrc={imageSrc}
@@ -123,7 +125,7 @@ const GameCard = ({ imageSrc, hintLeft, hintRight }: GameCardProps) => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
       />
-      <HintCard text={hintToDisplay} style={hintStyle} />
+      {/* <HintCard text={hintToDisplay} style={hintStyle} /> */}
     </>
   );
 };
