@@ -23,22 +23,22 @@ const useVideoController = (videoName: VideoStateType) => {
   };
 
   const onVideoEnd = () => {
-    if (videoName === "intro_1" || videoName === "intro_2") {
+    if (videoName === "intro" || videoName === "intro_2") {
       navigate("/play");
     }
   };
 
 
-  const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log("onClick");
-    playerRef.current?.seekTo(0);
-  };
+  // const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   console.log("onClick");
+  //   playerRef.current?.seekTo(0);
+  // };
 
   return {
     playerRef,
     currentVideo,
     hide,
-    handlePlayerClick: onClick,
+    // handlePlayerClick: onClick,
     onVideoEnd,
     updateCurrentVideo: switchVideo,
   };

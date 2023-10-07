@@ -1,5 +1,6 @@
 import VideoCanva from "./pages/VideoCanva/VideoCanva";
 import GamePlay from "./pages/GamePlay/GamePlay";
+import Home from "./pages/Home";
 import { Routes, Route, Outlet, Link, To } from "react-router-dom";
 import { LevelProvider } from "@/contexts/LevelContext";
 
@@ -37,7 +38,7 @@ function NavigationButtons() {
           Home
         </button>
         <button
-          onClick={() => handleButtonClick("/video")}
+          onClick={() => handleButtonClick("/video/intro")}
           className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Video
@@ -53,13 +54,13 @@ function NavigationButtons() {
   );
 }
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
+// function Home() {
+//   return (
+//     <div>
+//       <h2>Home</h2>
+//     </div>
+//   );
+// }
 
 function NoMatch() {
   return (
