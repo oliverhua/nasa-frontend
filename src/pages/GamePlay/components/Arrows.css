@@ -1,7 +1,7 @@
 .arrow-left {
   position: absolute;
   top: 50%;
-  left: 30%;
+  left: 36%;
   transform: translate(-50%, -50%);
   transform: rotate(90deg);
   cursor: pointer;
@@ -9,7 +9,7 @@
 .arrow-right {
   position: absolute;
   top: 50%;
-  right: 30%;
+  right: 36%;
   transform: translate(-50%, -50%);
   transform: rotate(270deg);
   cursor: pointer;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactPlayer from "react-player";
 import { videoDict, VideoStateType } from "../../../assets/VideoCollection";
 interface VideoPlayerProps {
