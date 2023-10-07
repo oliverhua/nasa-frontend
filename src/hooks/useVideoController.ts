@@ -23,6 +23,7 @@ const useVideoController = (videoName: VideoStateType) => {
   };
 
   const onVideoEnd = () => {
+    console.log("onVideoEnd", videoName);
     if (videoName === "intro" || videoName === "intro_2") {
       navigate("/play");
     }
