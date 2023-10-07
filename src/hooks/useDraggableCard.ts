@@ -103,8 +103,7 @@ const useDraggableCard = () => {
       : `translateY(${hintTranslation}px) rotate(${rotation}deg)`,
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: hintOpacity > 0 ? hintOpacity : 0,
-    hintSrc:
-      translation > 0 ? 1 : -1,
+    hintSrc: translation > 0 ? 1 : -1,
   };
 
   return { hintStyle, cardStyle, handleMouseDown };

@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useState, useContext } from "react";
-import { levelData, levelNumType, ScoreAttribute } from "@/assets/Storyline";
+import { levelData, levelNumType } from "@/assets/Storyline";
 
 const maxLevelValue = Math.max(...Object.keys(levelData).map(Number));
 
@@ -8,14 +8,6 @@ interface LevelContextType {
   maxLevel: number;
   setLevel: React.Dispatch<React.SetStateAction<number>>;
   nextLevel: (choice: "left" | "right") => void;
-  waterVolume: number;
-  waterQuality: number;
-  temperature: number;
-  engineeringBudget: number;
-  setWaterVolume: React.Dispatch<React.SetStateAction<number>>;
-  setWaterQuality: React.Dispatch<React.SetStateAction<number>>;
-  setTemperature: React.Dispatch<React.SetStateAction<number>>;
-  setEngineeringBudget: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const LevelContext = createContext<LevelContextType | undefined>(undefined);
@@ -26,24 +18,13 @@ interface LevelProviderProps {
 
 export const LevelProvider: React.FC<LevelProviderProps> = ({ children }) => {
   const [level, setLevel] = useState<levelNumType>(1);
-  const [waterVolume, setWaterVolume] = useState<number>(0);
-  const [waterQuality, setWaterQuality] = useState<number>(0);
-  const [temperature, setTemperature] = useState<number>(0);
-  const [engineeringBudget, setEngineeringBudget] = useState<number>(0);
 
-  const updateScore = (choice: string, attribute: ScoreAttribute) => {
-    const scoreData = choice === "left" ? "leftScore" : "rightScore";
-    return levelData[level][scoreData][attribute];
-  };
+  // const updateScore = (choice: string, attribute: ScoreAttribute) => {
+  //   const scoreData = choice === "left" ? "leftScore" : "rightScore";
+  //   return levelData[level][scoreData][attribute];
+  // };
 
   const nextLevel = (choice: string) => {
-    setWaterVolume((prev) => prev + updateScore(choice, "waterVolume"));
-    setWaterQuality((prev) => prev + updateScore(choice, "waterQuality"));
-    setTemperature((prev) => prev + updateScore(choice, "temperature"));
-    setEngineeringBudget(
-      (prev) => prev + updateScore(choice, "engineeringBudget")
-    );
-
     setLevel((prevLevel) => {
       const nextLevelData =
         choice === "left" ? "nextLeftLevel" : "nextRightLevel";
@@ -60,14 +41,6 @@ export const LevelProvider: React.FC<LevelProviderProps> = ({ children }) => {
         setLevel,
         nextLevel,
         maxLevel: maxLevelValue,
-        waterVolume,
-        waterQuality,
-        temperature,
-        engineeringBudget,
-        setWaterVolume,
-        setWaterQuality,
-        setTemperature,
-        setEngineeringBudget,
       }}
     >
       {children}

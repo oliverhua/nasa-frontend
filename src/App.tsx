@@ -14,7 +14,7 @@ function App() {
           <Route path="video/:videoName" element={<VideoCanva />} />
           <Route path="play" element={<GamePlay />} />
           <Route path="*" element={<NoMatch />} />
-          <Route path="result" element={<Result/>} />
+          <Route path="result" element={<Result />} />
         </Route>
       </Routes>
     </LevelProvider>

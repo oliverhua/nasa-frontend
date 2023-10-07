@@ -20,24 +20,6 @@ interface GameCardProps {
   hintRight: string;
 }
 
-interface HintCardProps {
-  text: string;
-  style: React.CSSProperties;
-}
-
-const HintCard = ({ text, style }: HintCardProps) => (
-  <div className="w-full h-full flex flex-col justify-center items-center">
-    <Card
-      className="px-20 py-8 mx-2 bg-gray-100 rounded-full z-10"
-      isPressable
-      style={style}
-    >
-      <CardBody className="overflow-visible p-0 rounded-full">
-        <p className="text-xl">{text}</p>
-      </CardBody>
-    </Card>
-  </div>
-);
 
 interface MainCardProps {
   cardName: string;
@@ -114,8 +96,6 @@ const GameCard = ({ imageSrc, hintLeft, hintRight }: GameCardProps) => {
 
   return (
     <>
-    <HintCard text={hintToDisplay} style={hintStyle} />
-    <HintCard text={hintToDisplay} style={hintStyle} />
       <MainCard
         cardName="Ms.CO2"
         imageSrc={imageSrc}
@@ -125,6 +105,7 @@ const GameCard = ({ imageSrc, hintLeft, hintRight }: GameCardProps) => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
       />
+
       {/* <HintCard text={hintToDisplay} style={hintStyle} /> */}
     </>
   );

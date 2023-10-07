@@ -1,7 +1,6 @@
 export const levelData: Record<number, LevelDataType> = {
   1: {
-    message:
-      "We're raindrops now!",
+    message: "We're raindrops now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "Rain",
     hintRight: "Got it!",
@@ -30,8 +29,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: 4,
   },
   4: {
-    message:
-      "We've turned into acid rain!",
+    message: "We've turned into acid rain!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "Rain",
     hintRight: "Got it!",
@@ -40,8 +38,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: 5,
   },
   5: {
-    message:
-      "Ready for a journey, buddy?Where shall we go explore?",
+    message: "Ready for a journey, buddy?Where shall we go explore?",
     imageSrc: "./src/assets/images/CharacterCardImages/Name=Mr. Wind.png",
     levelTitle: "Rain",
     hintRight: "Got it!",
@@ -50,8 +47,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: 6,
   },
   6: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -70,8 +66,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   8: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -80,8 +75,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   9: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -90,8 +84,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   10: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -100,8 +93,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   11: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -110,8 +102,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   12: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -120,8 +111,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   13: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -130,8 +120,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   14: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -140,8 +129,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   15: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -150,8 +138,7 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
   16: {
-    message:
-      "Whee!Paindrops splashed down and voila!We're in river mode now!",
+    message: "Whee!Paindrops splashed down and voila!We're in river mode now!",
     imageSrc: "./src/assets/images/StageCardImage/Original Size/Rain.png",
     levelTitle: "River",
     hintRight: "Got it!",
@@ -160,6 +147,8 @@ export const levelData: Record<number, LevelDataType> = {
     nextRightLevel: -1,
   },
 };
+
+export type levelNumType = keyof typeof levelData;
 
 interface LevelDirections {
   hintRight: string;

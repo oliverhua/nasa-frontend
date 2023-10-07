@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import GameCard from "./components/GameCard";
 import { useLevel } from "@/contexts/LevelContext";
-import "./GameFlow.css";
+import Arrows from "./components/Arrows";
 import { levelData } from "@/assets/Storyline";
 
 export default function GameFlow(): JSX.Element {
@@ -24,19 +24,9 @@ export default function GameFlow(): JSX.Element {
     return <p>Invalid level</p>;
   }
   return (
-    <div>
-      <div className="arrow-left">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <>
+      <Arrows />
 
-      <div className="arrow-right">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
       <div className="h-full w-full flex flex-col justify-center items-center">
         <div className="h-32 w-4/6 flex justify-center items-center">
           <p
@@ -47,15 +37,13 @@ export default function GameFlow(): JSX.Element {
             {currentMessage}
           </p>
         </div>
-      </div>
 
-      <div>
         <GameCard
           imageSrc={data.imageSrc}
           hintLeft={data.hintLeft}
           hintRight={data.hintRight}
         />
       </div>
-    </div>
+    </>
   );
 }

@@ -28,17 +28,17 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     //     hide ? "opacity-0" : "opacity-100"
     //   }`}
     // >
-      <ReactPlayer
-        playing={true}
-        ref={playerRef}
-        url={videoUrl}
-        width="100%"
-        height="100%"
-        playbackRate={1}
-        loop={false}
-        muted={false}
-        onEnded={onEnded}
-      />
+    <ReactPlayer
+      playing={true}
+      ref={playerRef}
+      url={videoUrl}
+      width="100%"
+      height="100%"
+      playbackRate={1}
+      loop={false}
+      muted={false}
+      onEnded={onEnded}
+    />
   );
 };
 

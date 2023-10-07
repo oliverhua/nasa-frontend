@@ -6,11 +6,9 @@ import { preloadVideo } from "@/pages/VideoCanva/components/VideoPlayer";
 
 import { useNavigate } from "react-router-dom";
 const useVideoController = (videoName: VideoStateType) => {
-
   const navigate = useNavigate();
   const playerRef = useRef<ReactPlayer>(null);
-  const [currentVideo, setCurrentVideo] =
-    useState<VideoStateType>(videoName);
+  const [currentVideo, setCurrentVideo] = useState<VideoStateType>(videoName);
   const [hide, setHide] = useState(false);
   const switchVideo = (video: VideoStateType) => {
     preloadVideo(video);
@@ -28,7 +26,6 @@ const useVideoController = (videoName: VideoStateType) => {
       navigate("/play");
     }
   };
-
 
   // const onClick = (e: React.MouseEvent<HTMLDivElement>) => {
   //   console.log("onClick");

@@ -32,9 +32,11 @@ export default {
       },
     },
     extend: {
-      backgroundImage:{
-        'StageBackground':"url('./src/assets/images/StageCardImage/Stage=Cloud.png')",
-        'ResultBackground':"url('./src/assets/images/StageCardImage/Stage=Ocean.png')"
+      backgroundImage: {
+        StageBackground:
+          "url('./src/assets/images/StageCardImage/Stage=Cloud.png')",
+        ResultBackground:
+          "url('./src/assets/images/StageCardImage/Stage=Ocean.png')",
       },
       keyframes: {
         fadeIn: {
