@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { levelData } from "@/assets/Storyline";
 import { useLevel } from "@/contexts/LevelContext";
 
 const useDraggableCard = () => {

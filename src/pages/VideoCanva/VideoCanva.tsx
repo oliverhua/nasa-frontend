@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <div
-        className="w-screen h-screen flex justify-center items-center"
+        className="w-screen h-screen flex justify-center items-center bg-[#C7E0ED]"
         // onClick={handlePlayerClick}
       >
         <VideoPlayer
