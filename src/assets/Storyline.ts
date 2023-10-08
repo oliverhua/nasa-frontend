@@ -1,7 +1,6 @@
 export const levelData = {
   1: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Ocean",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame91.svg",
@@ -38,7 +37,6 @@ export const levelData = {
   },
   2: {
     message: "(TBD))",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Cloud",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame90.svg",
@@ -97,7 +95,6 @@ export const levelData = {
   },
   3: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water Vapor",
     substanceState: "gas",
     iconImage: "./src/assets/images/IconImages/Frame87.svg",
@@ -144,7 +141,6 @@ export const levelData = {
   },
   4: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Mountain Snow",
     substanceState: "solid",
     iconImage: "./src/assets/images/IconImages/Frame89i.svg",
@@ -182,7 +178,6 @@ export const levelData = {
   },
   5: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Lakes & Streams",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame94.svg",
@@ -219,7 +214,6 @@ export const levelData = {
   },
   6: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Groundwater",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame93.svg",
@@ -257,7 +251,6 @@ export const levelData = {
   },
   7: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in plants",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame86.svg",
@@ -295,7 +288,6 @@ export const levelData = {
   },
   8: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in animals",
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame88.svg",
@@ -322,7 +314,6 @@ export const levelData = {
   },
   9: {
     message: "(TBD)",
-    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Polar & Glacial Ice",
     substanceState: "solid",
     iconImage: "./src/assets/images/IconImages/Frame92.svg",
@@ -371,9 +362,8 @@ interface NonCrisisOutdegree extends BaseOutdegree {
 
 export type OutdegreeType = CrisisOutdegree | NonCrisisOutdegree;
 
-interface LevelDataType {
-  message: string;
-  imageSrc: string;
+export interface LevelDataType {
+  message: string
   cardName: string;
   iconImage: string;
   substanceState: "gas" | "liquid" | "solid";

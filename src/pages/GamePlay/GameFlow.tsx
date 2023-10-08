@@ -25,6 +25,8 @@ import { InfoType, infoDict } from "@/assets/InfoMediaCollection";
 
 import "./stateChart.css";
 import { useChoice } from "@/contexts/ChoiceContext";
+import { characterDict } from "@/assets/CharacterCollection";
+
 export default function GameFlow() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isInformationOpen } = useDisclosureContext();
@@ -36,7 +38,6 @@ export default function GameFlow() {
   const { lastChoice } = useChoice();
   useEffect(() => {
     if (!lastChoice) return;
-    console.log(lastChoice);
     const message =
       lastChoice === "left"
         ? leftChoice.informationMessage
@@ -46,13 +47,11 @@ export default function GameFlow() {
 
     setInformationMessage(message);
     setInformationMedia(media);
-
-    console.log(edge, media);
   }, [lastChoice]);
 
   const [state, setState] = useState({
     message: data.message,
-    imageSrc: data.imageSrc,
+    imageSrc: characterDict[`ch${level}`],
     cardName: data.cardName,
     iconImage: data.iconImage,
     leftChoice: leftChoice,
@@ -60,6 +59,7 @@ export default function GameFlow() {
     fadeIn: true,
   });
 
+  console.log(state.imageSrc);
   useEffect(() => {
     if (isInformationOpen) return;
 
@@ -71,7 +71,7 @@ export default function GameFlow() {
     setTimeout(() => {
       setState({
         message: data.message,
-        imageSrc: data.imageSrc,
+        imageSrc: characterDict[`ch${level}`],
         cardName: data.cardName,
         iconImage: data.iconImage,
 
