@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useLevel } from "@/contexts/LevelContext";
+import { useDisclosureContext } from "@/contexts/DisclosureContext";
 
 const useDraggableCard = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -11,26 +12,28 @@ const useDraggableCard = () => {
 
   const [isNewLevel, setIsNewLevel] = useState(false);
   const [choice, setChoice] = useState<"left" | "right" | null>(null);
-
   const [hintOpacity, setHintOpacity] = useState(0);
+
+  const { onInformationOpen } = useDisclosureContext(); // For Modal
   const nextLevelCard = () => {
     setIsMounted(false);
+    onInformationOpen();
     setTimeout(() => {
       setIsNewLevel(true);
       setTranslation(0);
     }, 400);
   };
+  const processNewLevel = () => {
+    if (choice !== null) {
+      nextLevel(choice);
+    }
+    setChoice(null);
+  };
 
   useEffect(() => {
     if (isNewLevel) {
       setIsMounted(false);
-
-      setTimeout(() => {
-        if (choice !== null) {
-          nextLevel(choice);
-        }
-        setChoice(null);
-      }, 400);
+      setTimeout(processNewLevel, 400);
     }
   }, [isNewLevel]);
 
@@ -60,22 +63,17 @@ const useDraggableCard = () => {
 
   const handleMouseUp = () => {
     setIsDragging(false);
-
+    setHintOpacity(0);
     if (translation > 300) {
-      // 右滑
       setTranslation(window.innerWidth);
       setChoice("right");
       nextLevelCard();
-      setHintOpacity(0);
     } else if (translation < -300) {
-      // 左滑
       setTranslation(-window.innerWidth);
       setChoice("left");
       nextLevelCard();
-      setHintOpacity(0);
     } else {
       setTranslation(0);
-      setHintOpacity(0);
     }
   };
 
@@ -105,8 +103,12 @@ const useDraggableCard = () => {
     opacity: hintOpacity > 0 ? hintOpacity : 0,
     hintSrc: translation > 0 ? 1 : -1,
   };
-
-  return { hintStyle, cardStyle, handleMouseDown };
+  return {
+    choice,
+    hintStyle,
+    cardStyle,
+    handleMouseDown,
+  };
 };
 
 export default useDraggableCard;

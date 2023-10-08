@@ -4,20 +4,22 @@ import Result from "./pages/ResultPage/Result";
 import Home from "./pages/Home";
 import { Routes, Route, Outlet, Link, To } from "react-router-dom";
 import { LevelProvider } from "@/contexts/LevelContext";
-
+import { DisclosureProvider } from "@/contexts/DisclosureContext";
 function App() {
   return (
-    <LevelProvider>
-      <Routes>
-        <Route path="/" element={<NavigationButtons />}>
-          <Route index element={<Home />} />
-          <Route path="video/:videoName" element={<VideoCanva />} />
-          <Route path="play" element={<GamePlay />} />
-          <Route path="*" element={<NoMatch />} />
-          <Route path="result" element={<Result />} />
-        </Route>
-      </Routes>
-    </LevelProvider>
+    <DisclosureProvider>
+      <LevelProvider>
+        <Routes>
+          <Route path="/" element={<NavigationButtons />}>
+            <Route index element={<Home />} />
+            <Route path="video/:videoName" element={<VideoCanva />} />
+            <Route path="play" element={<GamePlay />} />
+            <Route path="*" element={<NoMatch />} />
+            <Route path="result" element={<Result />} />
+          </Route>
+        </Routes>
+      </LevelProvider>
+    </DisclosureProvider>
   );
 }
 import { useNavigate } from "react-router-dom";
