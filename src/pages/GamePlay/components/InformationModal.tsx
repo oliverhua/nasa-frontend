@@ -17,6 +17,7 @@ export default function InformationModal({ message }: InformationModalProps) {
   return (
     <>
       <Modal
+        isDismissable={false}
         backdrop={"blur"}
         isOpen={isInformationOpen}
         onClose={onInformationClose}

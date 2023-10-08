@@ -4,217 +4,274 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Ocean",
     substanceState: "liquid",
-    outdegrees: [
-      {
-        id: 1,
-        isCrisis: false,
-        choiceMessage: "Evaporation!",
-        informationMessage: "(Ocean Evaporation Information)",
-      },
-      {
-        id: 1,
-        isCrisis: false,
-        choiceMessage: "Current!",
+    outdegrees: [{
+      id: 3,
+      isCrisis: false,
+      choiceMessage: "Evaporation!",
+      informationMessage: "(Ocean Evaporation Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 1,
+      isCrisis: false,
+      choiceMessage: "Current!",
+      informationMessage: "(Current Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+        id: 9,
+        isCrisis: true,
+        choiceMessage: "Freeze!",
         informationMessage: "(Current Information)",
-      },
-      {
-        id: 1,
-        isCrisis: false,
-        choiceMessage: "Current!",
-        informationMessage: "(Current Information)",
-      },
-    ],
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+    }]
   },
   2: {
     message: "(TBD))",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Cloud",
     substanceState: "liquid", // | "liquid" | "solid"
-    outdegrees: [
-      {
+    outdegrees: [{
+      id: 3,
+      isCrisis: true,
+      choiceMessage: "Evaporation!",
+      informationMessage: "(Cloud Evaporation Information)",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }, {
+      id: 4,
+      isCrisis: true,
+      choiceMessage: "Precipitation(Snow)!",
+      informationMessage: "Precipitation(Snow) Information",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }, {
+      id: 5,
+      isCrisis: true,
+      choiceMessage: "Precipitation(Rain)!",
+      informationMessage: "Precipitation(Rain) Information",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }, {
         id: 1,
-        isCrisis: true,
-        choiceMessage: "Evaporation!",
-        informationMessage: "(Cloud Evaporation Information)",
-        crisisInformationMessage: "(TBD)",
-      },
-      {
-        id: 4,
-        isCrisis: true,
-        choiceMessage: "Precipitation(Snow)!",
-        informationMessage: "Precipitation(Snow) Information",
-        crisisInformationMessage: "(TBD)",
-      },
-      {
-        id: 5,
         isCrisis: true,
         choiceMessage: "Precipitation(Rain)!",
         informationMessage: "Precipitation(Rain) Information",
+        informationVideo: "()",
+        informationImage: "()",
         crisisInformationMessage: "(TBD)",
-      },
-    ],
+      }, {
+        id: 9,
+        isCrisis: true,
+        choiceMessage: "Precipitation(Snow)!",
+        informationMessage: "Precipitation(Snow) Information",
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+    }]
   },
   3: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water Vapor",
     substanceState: "gas",
-    outdegrees: [
-      {
-        id: 3,
-        isCrisis: false,
-        choiceMessage: "Transportation!",
-        informationMessage: "(Water Vapor Transportation Information)",
-      },
-      {
-        id: 2,
-        isCrisis: false,
-        choiceMessage: "Condensation!",
-        informationMessage: "(Water Vapor Condensation Information)",
-      },
-    ],
+    outdegrees: [{
+      id: 3,
+      isCrisis: false,
+      choiceMessage: "Transportation!",
+      informationMessage: "(Water Vapor Transportation Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 2,
+      isCrisis: false,
+      choiceMessage: "Condensation!",
+      informationMessage: "(Water Vapor Condensation Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+        id: 4,
+        isCrisis: true,
+        choiceMessage: "Frost!",
+        informationMessage: "Information",
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+      }, {
+        id: 9,
+        isCrisis: true,
+        choiceMessage: "Frost!",
+        informationMessage: "Information",
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+    }]
   },
   4: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Mountain Snow",
     substanceState: "solid",
-    outdegrees: [
-      {
+    outdegrees: [{
         id: 3,
         isCrisis: true,
         choiceMessage: "Sublimation!",
         informationMessage: "(Information)",
+        informationVideo: "()",
+        informationImage: "()",
         crisisInformationMessage: "(TBD)",
-      },
-      {
+    }, {
         id: 4,
-        isCrisis: false,
+        isCrisis: true,
         choiceMessage: "Deposition!",
         informationMessage: "(Information)",
-      },
-      {
-        id: 5,
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+    }, {
+      id: 5,
         isCrisis: false,
         choiceMessage: "Snowmelt Runoff!",
         informationMessage: "(Information)",
-      },
-    ],
+        informationVideo: "()",
+        informationImage: "()",
+    }]
   },
   5: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Lakes & Streams",
     substanceState: "liquid",
-    outdegrees: [
-      {
+    outdegrees: [{
         id: 1,
         isCrisis: false,
-        choiceMessage: "Discharge!",
+        choiceMessage: "Runoff!",
         informationMessage: "(Information)",
-      },
-      {
-        id: 6,
-        isCrisis: false,
-        choiceMessage: "Infiltration and Percolation!",
+        informationVideo: "()",
+        informationImage: "()",
+    }, {
+      id: 6,
+      isCrisis: false,
+      choiceMessage: "Infiltration and Percolation!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+        id: 8,
+        isCrisis: true,
+        choiceMessage: "Comnsumption!",
         informationMessage: "(Information)",
-      },
-    ],
+        informationVideo: "()",
+        informationImage: "()",
+        crisisInformationMessage: "(TBD)",
+    }]
   },
   6: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Groundwater",
     substanceState: "liquid",
-    outdegrees: [
-      {
-        id: 1,
-        isCrisis: false,
-        choiceMessage: "Discharge!",
-        informationMessage: "(Information)",
-      },
-      {
-        id: 5,
-        isCrisis: false,
-        choiceMessage: "Seapage!",
-        informationMessage: "(Information)",
-      },
-      {
-        id: 7,
-        isCrisis: true,
-        choiceMessage: "Plant Uptake!",
-        informationMessage: "(Information)",
-        crisisInformationMessage: "(TBD)",
-      },
-    ],
+    outdegrees: [{
+      id: 1,
+      isCrisis: true,
+      choiceMessage: "Discharge!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }, {
+      id: 5,
+      isCrisis: false,
+      choiceMessage: "Seepage!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 7,
+      isCrisis: true,
+      choiceMessage: "Plant Uptake!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }]
   },
   7: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in plants",
     substanceState: "liquid",
-    outdegrees: [
-      {
-        id: 6,
-        isCrisis: false,
-        choiceMessage: "Guttation!",
-        informationMessage: "(Information)",
-      },
-      {
-        id: 8,
-        isCrisis: true,
-        choiceMessage: "Digest!",
-        informationMessage: "(Information)",
-        crisisInformationMessage: "(TBD)",
-      },
-      {
-        id: 3,
-        isCrisis: true,
-        choiceMessage: "Transpiration!",
-        informationMessage: "(Information)",
-        crisisInformationMessage: "(TBD)",
-      },
-    ],
+    outdegrees: [{
+      id: 6,
+      isCrisis: true,
+      choiceMessage: "Guttation!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }, {
+      id: 8,
+      isCrisis: false,
+      choiceMessage: "Digestion!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 3,
+      isCrisis: true,
+      choiceMessage: "Transpiration!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+      crisisInformationMessage: "(TBD)",
+    }]
   },
   8: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in animals",
     substanceState: "liquid",
-    outdegrees: [
-      {
-        id: 3,
-        isCrisis: false,
-        choiceMessage: "Cellular Respiration!",
-        informationMessage: "(Information)",
-      },
-      {
-        id: 5,
-        isCrisis: false,
-        choiceMessage: "Excretion",
-        informationMessage: "(Information)",
-      },
-    ],
+    outdegrees: [{
+      id: 3,
+      isCrisis: false,
+      choiceMessage: "Cellular Respiration!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 5,
+      isCrisis: false,
+      choiceMessage: "Excretion",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }]
   },
   9: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Polar & Glacial Ice",
-    substanceState: "liquid",
-    outdegrees: [
-      {
-        id: 3,
-        isCrisis: false,
-        choiceMessage: "Cellular Respiration!",
-        informationMessage: "(Information)",
-      },
-      {
-        id: 5,
-        isCrisis: false,
-        choiceMessage: "Excretion",
-        informationMessage: "(Information)",
-      },
-    ],
+    substanceState: "solid",
+    outdegrees: [{
+      id: 1,
+      isCrisis: false,
+      choiceMessage: "Melting!",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }, {
+      id: 3,
+      isCrisis: false,
+      choiceMessage: "Sublimation",
+      informationMessage: "(Information)",
+      informationVideo: "()",
+      informationImage: "()",
+    }]
   },
 };
 
@@ -224,6 +281,8 @@ interface BaseOutdegree {
   id: number;
   choiceMessage: string;
   informationMessage: string;
+  informationVideo: string;
+  informationImage: string;
 }
 
 interface CrisisOutdegree extends BaseOutdegree {

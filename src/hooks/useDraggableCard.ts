@@ -59,7 +59,6 @@ const useDraggableCard = () => {
     const currentPos = event.clientX;
 
     const delta = currentPos - startPos.current;
-    const deltaAbs = Math.abs(currentPos - startPos.current);
 
     setTranslation(delta);
   };
