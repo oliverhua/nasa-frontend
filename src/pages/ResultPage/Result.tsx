@@ -1,5 +1,5 @@
-import background from "./ResultBackground.svg";
-import { Image } from "@nextui-org/react";
+// import background from "./ResultBackground.svg";
+// import { Image } from "@nextui-org/react";
 export default function Result() {
   return (
     <div className=" ">

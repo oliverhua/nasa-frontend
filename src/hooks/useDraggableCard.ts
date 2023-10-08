@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { useLevel } from "@/contexts/LevelContext";
 import { useDisclosureContext } from "@/contexts/DisclosureContext";
+import { useChoice } from "@/contexts/ChoiceContext";
 
-const useDraggableCard = () => {
+export default function useDraggableCard() {
   const [isDragging, setIsDragging] = useState(false);
   const [translation, setTranslation] = useState(0);
   const startPos = useRef(0);
@@ -12,6 +13,7 @@ const useDraggableCard = () => {
 
   const [isNewLevel, setIsNewLevel] = useState(false);
   const [choice, setChoice] = useState<"left" | "right" | null>(null);
+  const { lastChoice, setLastChoice } = useChoice();
 
   const { onInformationOpen } = useDisclosureContext(); // For Modal
   const nextLevelCard = () => {
@@ -68,10 +70,12 @@ const useDraggableCard = () => {
     if (translation > 300) {
       setTranslation(window.innerWidth);
       setChoice("right");
+      setLastChoice("right");
       nextLevelCard();
     } else if (translation < -300) {
       setTranslation(-window.innerWidth);
       setChoice("left");
+      setLastChoice("left");
       nextLevelCard();
     } else {
       setTranslation(0);
@@ -96,10 +100,8 @@ const useDraggableCard = () => {
     opacity: isMounted ? 1 : 0,
   };
   return {
-    choice,
+    lastChoice,
     cardStyle,
     handleMouseDown,
   };
-};
-
-export default useDraggableCard;
+}

@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
-
 const { nextui } = require("@nextui-org/react");
 
 export default {
-  mode: 'jit',
+  mode: "jit",
   content: [
     "./public/*",
     "./index.html",

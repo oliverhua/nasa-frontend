@@ -18,16 +18,10 @@ export const preloadVideo = (videoName: VideoStateType) => {
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   videoUrl,
-  hide,
   playerRef,
   onEnded,
 }) => {
   return (
-    // <div
-    //   className={`transition-opacity ease-in-out duration-1000 ${
-    //     hide ? "opacity-0" : "opacity-100"
-    //   }`}
-    // >
     <ReactPlayer
       playing={true}
       ref={playerRef}

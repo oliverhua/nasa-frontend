@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import ReactPlayer from "react-player";
-import { VideoStateType, videoDict } from "@/assets/VideoCollection";
-// import { fetchAnswerData, fetchPlaceData, sendTimeoutSignal } from "./Client";
+import { VideoStateType } from "@/assets/VideoCollection";
 import { preloadVideo } from "@/pages/VideoCanva/components/VideoPlayer";
 
 import { useNavigate } from "react-router-dom";

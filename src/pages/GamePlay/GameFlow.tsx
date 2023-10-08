@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import React from "react";
 import GameCard from "./components/GameCard";
 import { useLevel } from "@/contexts/LevelContext";
 import Arrows from "./components/Arrows";
@@ -8,32 +7,48 @@ import ChoiceCard from "./components/ChoiceCard";
 import QuestionCard from "./components/QuestionCard";
 import InformationModal from "./components/InformationModal";
 import { useDisclosureContext } from "@/contexts/DisclosureContext";
-import useDraggableCard from "@/hooks/useDraggableCard";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Image, Card,CardBody,CardHeader} from "@nextui-org/react";
-import "./stateChart.css"
+
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Image,
+  Card,
+  CardBody,
+  CardHeader,
+} from "@nextui-org/react";
+import { InfoType, infoDict } from "@/assets/InfoMediaCollection";
+
+import "./stateChart.css";
+import { useChoice } from "@/contexts/ChoiceContext";
 export default function GameFlow() {
-
-
-  const {isOpen, onOpen, onClose} = useDisclosure();
-  const [backdrop, setBackdrop] = React.useState('opaque');
-  const handleOpen = (backdrop:any) => {
-    setBackdrop(backdrop)
-    onOpen();
-  }
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { isInformationOpen } = useDisclosureContext();
   const { level, leftChoice, rightChoice } = useLevel();
   const [informationMessage, setInformationMessage] = useState<string>("");
+  const [informationMedia, setInformationMedia] = useState<string>("");
   const data = levelData[level];
   const gameCardOpacityClass = isInformationOpen ? "opacity-0" : "opacity-100";
-  const { choice } = useDraggableCard();
-
+  const { lastChoice } = useChoice();
   useEffect(() => {
+    if (!lastChoice) return;
+    console.log(lastChoice);
     const message =
-      choice === "left"
+      lastChoice === "left"
         ? leftChoice.informationMessage
         : rightChoice.informationMessage;
+    const edge = lastChoice === "left" ? leftChoice.edgeID : rightChoice.edgeID;
+    const media = infoDict[`info${edge}` as InfoType] ?? null;
+
     setInformationMessage(message);
-  }, [choice]);
+    setInformationMedia(media);
+
+    console.log(edge, media);
+  }, [lastChoice]);
 
   const [state, setState] = useState({
     message: data.message,
@@ -59,7 +74,7 @@ export default function GameFlow() {
         imageSrc: data.imageSrc,
         cardName: data.cardName,
         iconImage: data.iconImage,
-        
+
         leftChoice: leftChoice,
         rightChoice: rightChoice,
         fadeIn: true,
@@ -70,11 +85,14 @@ export default function GameFlow() {
   if (!data) {
     return <p>Invalid level</p>;
   }
-  
+
   return (
     <>
       <Arrows />
-      <InformationModal message={informationMessage} />
+      <InformationModal
+        message={informationMessage}
+        mediaSrc={informationMedia}
+      />
       <div className="h-full w-full flex flex-col justify-center items-center">
         <div className="h-32 w-4/6 flex justify-center items-center">
           <QuestionCard message={state.message} fadeIn={state.fadeIn} />
@@ -105,36 +123,39 @@ export default function GameFlow() {
           </div>
         </div>
       </div>
-      <Card className="bg-gray-300 right-0 absolute bottom-0 rounded-full justify-center" >
+      <Card className="bg-gray-300 right-0 absolute bottom-0 rounded-full justify-center">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <Button size="sm" radius="full" variant="light" className="text-tiny uppercase font-bold" onPress={()=> {handleOpen('blur')}}>Map</Button>
+          <Button
+            size="sm"
+            radius="full"
+            variant="light"
+            className="text-tiny uppercase font-bold"
+            onPress={onOpen}
+          >
+            Map
+          </Button>
         </CardHeader>
         <CardBody className="overflow-visible flex flex-row py-2 justify-center">
           <Image
             alt="Card background"
-            src={ levelData[state.leftChoice.id].iconImage}
+            src={levelData[state.leftChoice.id].iconImage}
           />
           <div className="arrow-1"></div>
-          <Image
-            alt="Card background"
-            src={state.iconImage}
-          />
+          <Image alt="Card background" src={state.iconImage} />
           <div className="arrow-12"></div>
           <Image
             alt="Card background"
             src={levelData[state.rightChoice.id].iconImage}
           />
         </CardBody>
-    </Card>
-      <Modal backdrop={"blur"} isOpen={isOpen} onClose={onClose}>
+      </Card>
+      <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
         <ModalContent>
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody className="relative">
-                
-                  <Image src="./src/assets/images/StageCard.svg"/>
-                
+                <Image src="./src/assets/images/StageCard.svg" />
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

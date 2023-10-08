@@ -9,15 +9,15 @@ import bg8 from "/background/bg8.png";
 import bg9 from "/background/bg9.png";
 // /src/assets
 export const backgroundDict = {
-  "bg1": bg1,
-  "bg2": bg2,
-  "bg3": bg3,
-  "bg4": bg4,
-  "bg5": bg5,
-  "bg6": bg6,
-  "bg7": bg7,
-  "bg8": bg8,
-  "bg9": bg9,
+  bg1: bg1,
+  bg2: bg2,
+  bg3: bg3,
+  bg4: bg4,
+  bg5: bg5,
+  bg6: bg6,
+  bg7: bg7,
+  bg8: bg8,
+  bg9: bg9,
 };
 
 export type BackgroundType = keyof typeof backgroundDict;
