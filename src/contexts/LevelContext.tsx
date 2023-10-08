@@ -1,12 +1,9 @@
 import React, { createContext, ReactNode, useState, useContext } from "react";
 import { levelData, levelNumType, OutdegreeType } from "@/assets/Storyline";
 
-const maxLevelValue = Math.max(...Object.keys(levelData).map(Number));
-
 interface LevelContextType {
   level: levelNumType;
-  maxLevel: number;
-  setLevel: React.Dispatch<React.SetStateAction<number>>;
+  setLevel: React.Dispatch<React.SetStateAction<levelNumType>>;
   nextLevel: (choice: "left" | "right") => void;
   crisis: OutdegreeType | null;
   rightChoice: OutdegreeType;
@@ -61,7 +58,6 @@ export const LevelProvider: React.FC<LevelProviderProps> = ({ children }) => {
         crisis,
         rightChoice,
         leftChoice,
-        maxLevel: maxLevelValue,
       }}
     >
       {children}
@@ -75,7 +71,7 @@ function getRandomOutdegrees(
   // Check if the key exists in the data
   if (!levelData[level]) return null;
 
-  const outdegrees = [...levelData[level].outdegrees];
+  const outdegrees = [...levelData[level].outdegrees] as OutdegreeType[];
 
   // Shuffle the outdegrees array
   for (let i = outdegrees.length - 1; i > 0; i--) {
