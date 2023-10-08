@@ -5,10 +5,10 @@ export default function App() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-[#C7E0ED]">
+    <div className="w-screen h-screen flex justify-center items-center bg-[url(/background/homepage.png)]">
       <Button
         radius="full"
-        className="w-96 h-32 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg text-4xl"
+        className="top-48 w-96 h-32 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg text-4xl"
         onClick={() => {
           navigate("/video/intro");
         }}
