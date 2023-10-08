@@ -1,5 +1,5 @@
 import GameFlow from "./GameFlow";
-import GameProgress from "./components/GameProgress";
+// import GameProgress from "./components/GameProgress";
 // import GameBackground from "../../assets/images/StageCardImage/Stage=Cloud.png"
 
 export default function Play() {

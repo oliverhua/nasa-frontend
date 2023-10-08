@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import GameCard from "./components/GameCard";
 import { useLevel } from "@/contexts/LevelContext";
 import Arrows from "./components/Arrows";
@@ -8,8 +9,17 @@ import QuestionCard from "./components/QuestionCard";
 import InformationModal from "./components/InformationModal";
 import { useDisclosureContext } from "@/contexts/DisclosureContext";
 import useDraggableCard from "@/hooks/useDraggableCard";
-
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Image, Card,CardBody,CardHeader} from "@nextui-org/react";
+import "./stateChart.css"
 export default function GameFlow() {
+
+
+  const {isOpen, onOpen, onClose} = useDisclosure();
+  const [backdrop, setBackdrop] = React.useState('opaque');
+  const handleOpen = (backdrop:any) => {
+    setBackdrop(backdrop)
+    onOpen();
+  }
   const { isInformationOpen } = useDisclosureContext();
   const { level, leftChoice, rightChoice } = useLevel();
   const [informationMessage, setInformationMessage] = useState<string>("");
@@ -29,6 +39,7 @@ export default function GameFlow() {
     message: data.message,
     imageSrc: data.imageSrc,
     cardName: data.cardName,
+    iconImage: data.iconImage,
     leftChoice: leftChoice,
     rightChoice: rightChoice,
     fadeIn: true,
@@ -47,6 +58,8 @@ export default function GameFlow() {
         message: data.message,
         imageSrc: data.imageSrc,
         cardName: data.cardName,
+        iconImage: data.iconImage,
+        
         leftChoice: leftChoice,
         rightChoice: rightChoice,
         fadeIn: true,
@@ -93,6 +106,46 @@ export default function GameFlow() {
           </div>
         </div>
       </div>
+      <Card className="bg-gray-300 right-0 absolute bottom-0 rounded-full justify-center" >
+        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+          <Button size="sm" radius="full" variant="light" className="text-tiny uppercase font-bold" onPress={()=> {handleOpen('blur')}}>Map</Button>
+        </CardHeader>
+        <CardBody className="overflow-visible flex flex-row py-2 justify-center">
+          <Image
+            alt="Card background"
+            src={ levelData[state.leftChoice.id].iconImage}
+          />
+          <div className="arrow-1"></div>
+          <Image
+            alt="Card background"
+            src={state.iconImage}
+          />
+          <div className="arrow-12"></div>
+          <Image
+            alt="Card background"
+            src={levelData[state.rightChoice.id].iconImage}
+          />
+        </CardBody>
+    </Card>
+      <Modal backdrop={"blur"} isOpen={isOpen} onClose={onClose}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1"></ModalHeader>
+              <ModalBody className="relative">
+                
+                  <Image src="./src/assets/images/StageCard.svg"/>
+                
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 }

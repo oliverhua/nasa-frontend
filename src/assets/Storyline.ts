@@ -4,6 +4,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Ocean",
     substanceState: "liquid",
+    iconImage:"./src/assets/images/IconImages/Frame91.svg",
     outdegrees: [{
       id: 3,
       isCrisis: false,
@@ -33,6 +34,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Cloud",
     substanceState: "liquid", // | "liquid" | "solid"
+    iconImage: "./src/assets/images/IconImages/Frame90.svg",
     outdegrees: [{
       id: 3,
       isCrisis: true,
@@ -80,6 +82,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water Vapor",
     substanceState: "gas",
+    iconImage: "./src/assets/images/IconImages/Frame87.svg",
     outdegrees: [{
       id: 3,
       isCrisis: false,
@@ -117,6 +120,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Mountain Snow",
     substanceState: "solid",
+    iconImage: "./src/assets/images/IconImages/Frame89i.svg",
     outdegrees: [{
         id: 3,
         isCrisis: true,
@@ -147,6 +151,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Lakes & Streams",
     substanceState: "liquid",
+    iconImage: "./src/assets/images/IconImages/Frame94.svg",
     outdegrees: [{
         id: 1,
         isCrisis: false,
@@ -176,6 +181,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Groundwater",
     substanceState: "liquid",
+    iconImage: "./src/assets/images/IconImages/Frame93.svg",
     outdegrees: [{
       id: 1,
       isCrisis: true,
@@ -206,6 +212,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in plants",
     substanceState: "liquid",
+    iconImage: "./src/assets/images/IconImages/Frame86.svg",
     outdegrees: [{
       id: 6,
       isCrisis: true,
@@ -236,6 +243,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Water in animals",
     substanceState: "liquid",
+    iconImage: "./src/assets/images/IconImages/Frame88.svg",
     outdegrees: [{
       id: 3,
       isCrisis: false,
@@ -257,6 +265,7 @@ export const levelData: Record<number, LevelDataType> = {
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
     cardName: "Polar & Glacial Ice",
     substanceState: "solid",
+    iconImage: "./src/assets/images/IconImages/Frame92.svg",
     outdegrees: [{
       id: 1,
       isCrisis: false,
@@ -300,6 +309,7 @@ interface LevelDataType {
   message: string;
   imageSrc: string;
   cardName: string;
+  iconImage: string;
   substanceState: "gas" | "liquid" | "solid";
   outdegrees: OutdegreeType[];
 }
