@@ -20,9 +20,10 @@ import {
   Card,
   CardBody,
   CardHeader,
+  Progress,
 } from "@nextui-org/react";
 import { InfoType, infoDict } from "@/assets/InfoMediaCollection";
-
+import useDraggableCard from "@/hooks/useDraggableCard";
 import "./stateChart.css";
 import { useChoice } from "@/contexts/ChoiceContext";
 import { characterDict } from "@/assets/CharacterCollection";
@@ -36,7 +37,17 @@ export default function GameFlow() {
   const data = levelData[level];
   const gameCardOpacityClass = isInformationOpen ? "opacity-0" : "opacity-100";
   const { lastChoice } = useChoice();
+  
+  const { op } = useDraggableCard();
+  const [leftIcon, setLeftIcon] = useState('');
+  const [rightIcon, setRightIcon] = useState('');
+  const [StateSrcOne, setStateSrcOne] = useState('./src/assets/images/StateImages/GAS_inactive.svg');
+  const [StateSrcTwo, setStateSrcTwo] = useState('./src/assets/images/StateImages/GAS_inactive.svg');
+  const [StateSrcThree, setStateSrcThree] = useState('./src/assets/images/StateImages/GAS_inactive.svg');
+  
+  const [waterState, setwaterState] = useState("");
   useEffect(() => {
+    // setIconOpacity(IconStyle.opacity);
     if (!lastChoice) return;
     const message =
       lastChoice === "left"
@@ -47,13 +58,19 @@ export default function GameFlow() {
 
     setInformationMessage(message);
     setInformationMedia(media);
+    setStateSrcOne('./src/assets/images/StateImages/GAS_inactive.svg');
+    setStateSrcTwo('./src/assets/images/StateImages/LIQUID_active.svg');
+    setStateSrcThree('./src/assets/images/StateImages/SOLID_inactive.svg');
+    
   }, [lastChoice]);
+
 
   const [state, setState] = useState({
     message: data.message,
     imageSrc: characterDict[`ch${level}`],
     cardName: data.cardName,
     iconImage: data.iconImage,
+    dataState: data.substanceState,
     leftChoice: leftChoice,
     rightChoice: rightChoice,
     fadeIn: true,
@@ -74,18 +91,35 @@ export default function GameFlow() {
         imageSrc: characterDict[`ch${level}`],
         cardName: data.cardName,
         iconImage: data.iconImage,
-
+        dataState: data.substanceState,
         leftChoice: leftChoice,
         rightChoice: rightChoice,
         fadeIn: true,
       });
+      setLeftIcon(levelData[leftChoice.id].iconImage);
+      setRightIcon(levelData[rightChoice.id].iconImage);
+      if(levelData[level].substanceState === 'liquid'){
+        setStateSrcOne('./src/assets/images/StateImages/GAS_inactive_new.svg')
+        setStateSrcTwo('./src/assets/images/StateImages/LIQUID_active_new.svg')
+        setStateSrcThree('./src/assets/images/StateImages/SOLID_inactive_new.svg')
+      }
+      else if(levelData[level].substanceState === 'gas'){
+        setStateSrcOne('./src/assets/images/StateImages/GAS_active_new.svg')
+        setStateSrcTwo('./src/assets/images/StateImages/LIQUID_inactive_new.svg')
+        setStateSrcThree('./src/assets/images/StateImages/SOLID_inactive_new.svg')
+      }
+      else{
+        setStateSrcOne('./src/assets/images/StateImages/GAS_inactive_new.svg')
+        setStateSrcTwo('./src/assets/images/StateImages/LIQUID_inactive_new.svg')
+        setStateSrcThree('./src/assets/images/StateImages/SOLID_active_new.svg')
+      }
+      
     }, 300);
   }, [level, isInformationOpen]);
 
   if (!data) {
     return <p>Invalid level</p>;
   }
-
   return (
     <>
       <Arrows />
@@ -123,29 +157,28 @@ export default function GameFlow() {
           </div>
         </div>
       </div>
-      <Card className="bg-gray-300 right-0 absolute bottom-0 rounded-full justify-center">
-        <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <Button
-            size="sm"
-            radius="full"
-            variant="light"
-            className="text-tiny uppercase font-bold"
-            onPress={onOpen}
-          >
-            Map
-          </Button>
+      <div className="justify-between">
+      <Card className="bg-gray-300 w-64 h-24 z-10 right-0 absolute bottom-0 rounded-none justify-center" isPressable onPress={onOpen}>
+        <CardHeader className="pb-0 pt-5 px-1 items-start">
+          <Button size="sm" radius="full" variant="light" className="text-tiny uppercase font-bold" >Map</Button>
         </CardHeader>
-        <CardBody className="overflow-visible flex flex-row py-2 justify-center">
+        <CardBody className="overflow-visible flex flex-row py-2 justify-center" >
           <Image
+            className="w-20 h-20"
             alt="Card background"
-            src={levelData[state.leftChoice.id].iconImage}
+            src={ leftIcon }
           />
-          <div className="arrow-1"></div>
-          <Image alt="Card background" src={state.iconImage} />
-          <div className="arrow-12"></div>
+          <div className={`arrow-1 opacity-${op}`} ></div>
           <Image
+            className="w-20 h-20"
             alt="Card background"
-            src={levelData[state.rightChoice.id].iconImage}
+            src={state.iconImage}
+          />
+          <div className={`arrow-12 opacity-${op}`}></div>
+          <Image
+            className="w-20 h-20"
+            alt="Card background"
+            src={ rightIcon }
           />
         </CardBody>
       </Card>
@@ -166,6 +199,35 @@ export default function GameFlow() {
           )}
         </ModalContent>
       </Modal>
+      <Card className="bg-gray-300 w-64 h-24 z-10 left-0 absolute bottom-0 rounded-none justify-center">
+        <CardHeader className="pb-0 pt-5 px-1 items-start">
+          <Button size="sm" radius="full" variant="light" className="text-tiny uppercase font-bold" >state</Button>
+        </CardHeader>
+        <CardBody className="overflow-visible flex flex-row py-2 justify-center" >
+          
+          <Image
+            className="w-20 h-20"
+            alt="Card background"
+            src={ StateSrcOne }
+          />
+          
+          <Image
+            className="w-20 h-20"
+            alt="Card background"
+            src={StateSrcTwo}
+          />
+          
+          <Image
+            className="w-20 h-20"
+            alt="Card background"
+            src={ StateSrcThree }
+          />
+        </CardBody>
+    </Card>
+    {/* <div className="absolute bottom-0 right-4"> */}
+      <Progress className="absolute bottom-0 right-4" size="lg" aria-label="Loading..." value={50} />
+    {/* </div> */}
+    </div>
     </>
   );
 }

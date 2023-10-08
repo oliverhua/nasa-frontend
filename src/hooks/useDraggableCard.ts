@@ -99,8 +99,14 @@ export default function useDraggableCard() {
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: isMounted ? 1 : 0,
   };
+  
+  
+  const op =  translation===0? 5:50;
+  console.log(op)
   return {
     lastChoice,
+    op,
+    choice,
     cardStyle,
     handleMouseDown,
   };

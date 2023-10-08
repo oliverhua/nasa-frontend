@@ -143,10 +143,8 @@ export const levelData = {
     message: "(TBD)",
     cardName: "Mountain Snow",
     substanceState: "solid",
-    iconImage: "./src/assets/images/IconImages/Frame89i.svg",
-    outdegrees: [
-      {
-        edgeID: 7,
+    iconImage: "./src/assets/images/IconImages/Frame89.svg",
+    outdegrees: [{
         id: 3,
         isCrisis: true,
         choiceMessage: "Sublimation!",
