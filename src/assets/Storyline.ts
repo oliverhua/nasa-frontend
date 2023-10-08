@@ -6,6 +6,7 @@ export const levelData = {
     substanceState: "liquid",
     iconImage:"./src/assets/images/IconImages/Frame91.svg",
     outdegrees: [{
+      edgeID: 2,
       id: 3,
       isCrisis: false,
       choiceMessage: "Evaporation!",
@@ -13,6 +14,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 1,
       id: 1,
       isCrisis: false,
       choiceMessage: "Current!",
@@ -20,6 +22,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+        edgeID: 24,
         id: 9,
         isCrisis: true,
         choiceMessage: "Freeze!",
@@ -36,6 +39,7 @@ export const levelData = {
     substanceState: "liquid", // | "liquid" | "solid"
     iconImage: "./src/assets/images/IconImages/Frame90.svg",
     outdegrees: [{
+      edgeID: 4,
       id: 3,
       isCrisis: true,
       choiceMessage: "Evaporation!",
@@ -44,6 +48,7 @@ export const levelData = {
       informationImage: "()",
       crisisInformationMessage: "(TBD)",
     }, {
+      edgeID: 5,
       id: 4,
       isCrisis: true,
       choiceMessage: "Precipitation(Snow)!",
@@ -52,6 +57,7 @@ export const levelData = {
       informationImage: "()",
       crisisInformationMessage: "(TBD)",
     }, {
+      edgeID: 6,
       id: 5,
       isCrisis: true,
       choiceMessage: "Precipitation(Rain)!",
@@ -60,6 +66,7 @@ export const levelData = {
       informationImage: "()",
       crisisInformationMessage: "(TBD)",
     }, {
+        edgeID: 26,
         id: 1,
         isCrisis: true,
         choiceMessage: "Precipitation(Rain)!",
@@ -68,6 +75,7 @@ export const levelData = {
         informationImage: "()",
         crisisInformationMessage: "(TBD)",
       }, {
+        edgeID: 23,
         id: 9,
         isCrisis: true,
         choiceMessage: "Precipitation(Snow)!",
@@ -84,6 +92,7 @@ export const levelData = {
     substanceState: "gas",
     iconImage: "./src/assets/images/IconImages/Frame87.svg",
     outdegrees: [{
+      edgeID: 28,
       id: 3,
       isCrisis: false,
       choiceMessage: "Transportation!",
@@ -91,6 +100,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 3,
       id: 2,
       isCrisis: false,
       choiceMessage: "Condensation!",
@@ -98,6 +108,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+        edgeID: 20,
         id: 4,
         isCrisis: true,
         choiceMessage: "Frost!",
@@ -106,6 +117,7 @@ export const levelData = {
         informationImage: "()",
         crisisInformationMessage: "(TBD)",
       }, {
+        edgeID: 22,
         id: 9,
         isCrisis: true,
         choiceMessage: "Frost!",
@@ -122,6 +134,7 @@ export const levelData = {
     substanceState: "solid",
     iconImage: "./src/assets/images/IconImages/Frame89i.svg",
     outdegrees: [{
+        edgeID: 7,
         id: 3,
         isCrisis: true,
         choiceMessage: "Sublimation!",
@@ -130,6 +143,7 @@ export const levelData = {
         informationImage: "()",
         crisisInformationMessage: "(TBD)",
     }, {
+        edgeID: 8,
         id: 4,
         isCrisis: true,
         choiceMessage: "Deposition!",
@@ -138,7 +152,8 @@ export const levelData = {
         informationImage: "()",
         crisisInformationMessage: "(TBD)",
     }, {
-      id: 5,
+        edgeID: 9,
+        id: 5,
         isCrisis: false,
         choiceMessage: "Snowmelt Runoff!",
         informationMessage: "(Information)",
@@ -153,6 +168,7 @@ export const levelData = {
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame94.svg",
     outdegrees: [{
+        edgeID: 11,
         id: 1,
         isCrisis: false,
         choiceMessage: "Runoff!",
@@ -160,6 +176,7 @@ export const levelData = {
         informationVideo: "()",
         informationImage: "()",
     }, {
+      edgeID: 10,
       id: 6,
       isCrisis: false,
       choiceMessage: "Infiltration and Percolation!",
@@ -167,6 +184,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+        edgeID: 27,
         id: 8,
         isCrisis: true,
         choiceMessage: "Comnsumption!",
@@ -183,6 +201,7 @@ export const levelData = {
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame93.svg",
     outdegrees: [{
+      edgeID: 13,
       id: 1,
       isCrisis: true,
       choiceMessage: "Discharge!",
@@ -191,6 +210,7 @@ export const levelData = {
       informationImage: "()",
       crisisInformationMessage: "(TBD)",
     }, {
+      edgeID: 12,
       id: 5,
       isCrisis: false,
       choiceMessage: "Seepage!",
@@ -198,6 +218,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 14,
       id: 7,
       isCrisis: true,
       choiceMessage: "Plant Uptake!",
@@ -214,6 +235,7 @@ export const levelData = {
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame86.svg",
     outdegrees: [{
+      edgeID: 15,
       id: 6,
       isCrisis: true,
       choiceMessage: "Guttation!",
@@ -222,6 +244,7 @@ export const levelData = {
       informationImage: "()",
       crisisInformationMessage: "(TBD)",
     }, {
+      edgeID: 16,
       id: 8,
       isCrisis: false,
       choiceMessage: "Digestion!",
@@ -229,6 +252,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 18,
       id: 3,
       isCrisis: true,
       choiceMessage: "Transpiration!",
@@ -245,13 +269,15 @@ export const levelData = {
     substanceState: "liquid",
     iconImage: "./src/assets/images/IconImages/Frame88.svg",
     outdegrees: [{
-      id: 3,
+      edgeID: 19,
+      id: 3,    
       isCrisis: false,
       choiceMessage: "Cellular Respiration!",
       informationMessage: "(Information)",
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 17,
       id: 5,
       isCrisis: false,
       choiceMessage: "Excretion",
@@ -267,6 +293,7 @@ export const levelData = {
     substanceState: "solid",
     iconImage: "./src/assets/images/IconImages/Frame92.svg",
     outdegrees: [{
+      edgeID: 25,
       id: 1,
       isCrisis: false,
       choiceMessage: "Melting!",
@@ -274,6 +301,7 @@ export const levelData = {
       informationVideo: "()",
       informationImage: "()",
     }, {
+      edgeID: 21,
       id: 3,
       isCrisis: false,
       choiceMessage: "Sublimation",
