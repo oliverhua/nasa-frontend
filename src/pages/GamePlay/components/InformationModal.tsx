@@ -23,7 +23,7 @@ export default function InformationModal({ message }: InformationModalProps) {
         className="text-black"
       >
         <ModalContent>
-          {(onClose) => (
+          {(onInformationClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 Information about Our Journey
@@ -32,7 +32,7 @@ export default function InformationModal({ message }: InformationModalProps) {
                 <p>{message}</p>
               </ModalBody>
               <ModalFooter>
-                <Button color="primary" onPress={onClose}>
+                <Button color="primary" onPress={onInformationClose}>
                   Continue
                 </Button>
               </ModalFooter>

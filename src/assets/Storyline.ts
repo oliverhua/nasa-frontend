@@ -1,59 +1,218 @@
 export const levelData: Record<number, LevelDataType> = {
   1: {
-    message: "We're raindrops now!",
+    message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
-    cardName: "11111111111111111111111111111111111",
-    substanceState: "gas", // | "liquid" | "solid"
+    cardName: "Ocean",
+    substanceState: "liquid",
     outdegrees: [
       {
-        id: 2,
-        isCrisis: true,
-        choiceMessage: "This is the choice for 2",
-        informationMessage: "Information 2 to 2",
-        crisisInformationMessage: "This is the crisis information of 2",
+        id: 1,
+        isCrisis: false,
+        choiceMessage: "Evaporation!",
+        informationMessage: "(Ocean Evaporation Information)",
       },
       {
-        id: 2,
+        id: 1,
         isCrisis: false,
-        choiceMessage: "This is the choice for 2",
-        informationMessage: "Information 2 to 2",
-        crisisInformationMessage: "This is the crisis information of 2",
+        choiceMessage: "Current!",
+        informationMessage: "(Current Information)",
       },
       {
-        id: 2,
+        id: 1,
         isCrisis: false,
-        choiceMessage: "This is the choice for 2",
-        informationMessage: "Information 2 to 2",
-        crisisInformationMessage: "This is the crisis information of 2",
+        choiceMessage: "Current!",
+        informationMessage: "(Current Information)",
       },
     ],
   },
   2: {
-    message: "We're raindrops now!",
+    message: "(TBD))",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
-    cardName: "222222222222222222222222222222222222222",
-    substanceState: "gas", // | "liquid" | "solid"
+    cardName: "Cloud",
+    substanceState: "liquid", // | "liquid" | "solid"
     outdegrees: [
       {
         id: 1,
         isCrisis: true,
-        choiceMessage: "This is the choice for 1",
-        informationMessage: "Information 1 to 1",
-        crisisInformationMessage: "This is the crisis information of 1",
+        choiceMessage: "Evaporation!",
+        informationMessage: "(Cloud Evaporation Information)",
+        crisisInformationMessage: "(TBD)",
       },
       {
-        id: 1,
+        id: 4,
         isCrisis: true,
-        choiceMessage: "This is the choice for 1",
-        informationMessage: "Information 1 to 1",
-        crisisInformationMessage: "This is the crisis information of 1",
+        choiceMessage: "Precipitation(Snow)!",
+        informationMessage: "Precipitation(Snow) Information",
+        crisisInformationMessage: "(TBD)",
       },
       {
-        id: 1,
+        id: 5,
         isCrisis: true,
-        choiceMessage: "This is the choice for 1",
-        informationMessage: "Information 1 to 1",
-        crisisInformationMessage: "This is the crisis information of 1",
+        choiceMessage: "Precipitation(Rain)!",
+        informationMessage: "Precipitation(Rain) Information",
+        crisisInformationMessage: "(TBD)",
+      },
+    ],
+  },
+  3: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Water Vapor",
+    substanceState: "gas",
+    outdegrees: [
+      {
+        id: 3,
+        isCrisis: false,
+        choiceMessage: "Transportation!",
+        informationMessage: "(Water Vapor Transportation Information)",
+      },
+      {
+        id: 2,
+        isCrisis: false,
+        choiceMessage: "Condensation!",
+        informationMessage: "(Water Vapor Condensation Information)",
+      },
+    ],
+  },
+  4: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Mountain Snow",
+    substanceState: "solid",
+    outdegrees: [
+      {
+        id: 3,
+        isCrisis: true,
+        choiceMessage: "Sublimation!",
+        informationMessage: "(Information)",
+        crisisInformationMessage: "(TBD)",
+      },
+      {
+        id: 4,
+        isCrisis: false,
+        choiceMessage: "Deposition!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 5,
+        isCrisis: false,
+        choiceMessage: "Snowmelt Runoff!",
+        informationMessage: "(Information)",
+      },
+    ],
+  },
+  5: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Lakes & Streams",
+    substanceState: "liquid",
+    outdegrees: [
+      {
+        id: 1,
+        isCrisis: false,
+        choiceMessage: "Discharge!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 6,
+        isCrisis: false,
+        choiceMessage: "Infiltration and Percolation!",
+        informationMessage: "(Information)",
+      },
+    ],
+  },
+  6: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Groundwater",
+    substanceState: "liquid",
+    outdegrees: [
+      {
+        id: 1,
+        isCrisis: false,
+        choiceMessage: "Discharge!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 5,
+        isCrisis: false,
+        choiceMessage: "Seapage!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 7,
+        isCrisis: true,
+        choiceMessage: "Plant Uptake!",
+        informationMessage: "(Information)",
+        crisisInformationMessage: "(TBD)",
+      },
+    ],
+  },
+  7: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Water in plants",
+    substanceState: "liquid",
+    outdegrees: [
+      {
+        id: 6,
+        isCrisis: false,
+        choiceMessage: "Guttation!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 8,
+        isCrisis: true,
+        choiceMessage: "Digest!",
+        informationMessage: "(Information)",
+        crisisInformationMessage: "(TBD)",
+      },
+      {
+        id: 3,
+        isCrisis: true,
+        choiceMessage: "Transpiration!",
+        informationMessage: "(Information)",
+        crisisInformationMessage: "(TBD)",
+      },
+    ],
+  },
+  8: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Water in animals",
+    substanceState: "liquid",
+    outdegrees: [
+      {
+        id: 3,
+        isCrisis: false,
+        choiceMessage: "Cellular Respiration!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 5,
+        isCrisis: false,
+        choiceMessage: "Excretion",
+        informationMessage: "(Information)",
+      },
+    ],
+  },
+  9: {
+    message: "(TBD)",
+    imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
+    cardName: "Polar & Glacial Ice",
+    substanceState: "liquid",
+    outdegrees: [
+      {
+        id: 3,
+        isCrisis: false,
+        choiceMessage: "Cellular Respiration!",
+        informationMessage: "(Information)",
+      },
+      {
+        id: 5,
+        isCrisis: false,
+        choiceMessage: "Excretion",
+        informationMessage: "(Information)",
       },
     ],
   },
@@ -61,18 +220,27 @@ export const levelData: Record<number, LevelDataType> = {
 
 export type levelNumType = keyof typeof levelData;
 
-type LevelDataType = {
+interface BaseOutdegree {
+  id: number;
+  choiceMessage: string;
+  informationMessage: string;
+}
+
+interface CrisisOutdegree extends BaseOutdegree {
+  isCrisis: true;
+  crisisInformationMessage: string;
+}
+
+interface NonCrisisOutdegree extends BaseOutdegree {
+  isCrisis: false;
+}
+
+export type OutdegreeType = CrisisOutdegree | NonCrisisOutdegree;
+
+interface LevelDataType {
   message: string;
   imageSrc: string;
   cardName: string;
   substanceState: "gas" | "liquid" | "solid";
   outdegrees: OutdegreeType[];
-};
-
-export type OutdegreeType = {
-  id: number;
-  isCrisis: boolean;
-  choiceMessage: string;
-  informationMessage: string;
-  crisisInformationMessage: string;
-};
+}

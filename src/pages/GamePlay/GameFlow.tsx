@@ -15,8 +15,8 @@ export default function GameFlow() {
   const [informationMessage, setInformationMessage] = useState<string>("");
   const data = levelData[level];
   const gameCardOpacityClass = isInformationOpen ? "opacity-0" : "opacity-100";
-
   const { choice } = useDraggableCard();
+
   useEffect(() => {
     const message =
       choice === "left"
@@ -24,11 +24,11 @@ export default function GameFlow() {
         : rightChoice.informationMessage;
     setInformationMessage(message);
   }, [choice]);
+
   const [state, setState] = useState({
     message: data.message,
     imageSrc: data.imageSrc,
     cardName: data.cardName,
-
     leftChoice: leftChoice,
     rightChoice: rightChoice,
     fadeIn: true,
@@ -57,7 +57,8 @@ export default function GameFlow() {
   if (!data) {
     return <p>Invalid level</p>;
   }
-
+  console.log(level);
+  console.log(data.cardName);
   return (
     <>
       <Arrows />

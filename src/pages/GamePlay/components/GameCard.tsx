@@ -1,7 +1,6 @@
 import { Card, Image, CardFooter, CardBody, Divider } from "@nextui-org/react";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import { useDisclosureContext } from "@/contexts/DisclosureContext";
 import useDraggableCard from "@/hooks/useDraggableCard";
 interface GameCardProps {
   imageSrc: string;
@@ -45,8 +44,6 @@ const MainCard = ({
 
 const GameCard = ({ imageSrc, cardName }: GameCardProps) => {
   const { cardStyle, handleMouseDown } = useDraggableCard();
-  const { isInformationOpen } = useDisclosureContext();
-
   return (
     <MainCard
       cardName={cardName}

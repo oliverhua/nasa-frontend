@@ -8,11 +8,10 @@ const useDraggableCard = () => {
   const startPos = useRef(0);
   const [isMounted, setIsMounted] = useState(false);
 
-  const { level, nextLevel } = useLevel();
+  const { nextLevel } = useLevel();
 
   const [isNewLevel, setIsNewLevel] = useState(false);
   const [choice, setChoice] = useState<"left" | "right" | null>(null);
-  const [hintOpacity, setHintOpacity] = useState(0);
 
   const { onInformationOpen } = useDisclosureContext(); // For Modal
   const nextLevelCard = () => {
@@ -27,6 +26,11 @@ const useDraggableCard = () => {
     if (choice !== null) {
       nextLevel(choice);
     }
+    setIsNewLevel(false);
+    setIsDragging(false);
+    startPos.current = 0;
+    setIsMounted(true);
+
     setChoice(null);
   };
 
@@ -42,7 +46,7 @@ const useDraggableCard = () => {
     setIsDragging(false);
     startPos.current = 0;
     setIsMounted(true);
-  }, [level]);
+  }, []);
 
   const handleMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -58,12 +62,10 @@ const useDraggableCard = () => {
     const deltaAbs = Math.abs(currentPos - startPos.current);
 
     setTranslation(delta);
-    setHintOpacity(deltaAbs >= 100 ? 1 : deltaAbs / 100);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setHintOpacity(0);
     if (translation > 300) {
       setTranslation(window.innerWidth);
       setChoice("right");
@@ -87,7 +89,6 @@ const useDraggableCard = () => {
   }, [isDragging, translation]);
 
   const rotation = (translation / window.innerWidth) * 45;
-  const hintTranslation = -Math.abs(translation);
   const cardStyle = {
     transform: isNewLevel
       ? "none"
@@ -95,17 +96,8 @@ const useDraggableCard = () => {
     transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
     opacity: isMounted ? 1 : 0,
   };
-  const hintStyle = {
-    transform: isNewLevel
-      ? "none"
-      : `translateY(${hintTranslation}px) rotate(${rotation}deg)`,
-    transition: isDragging ? "none" : `transform 0.4s, opacity 0.4s`,
-    opacity: hintOpacity > 0 ? hintOpacity : 0,
-    hintSrc: translation > 0 ? 1 : -1,
-  };
   return {
     choice,
-    hintStyle,
     cardStyle,
     handleMouseDown,
   };
