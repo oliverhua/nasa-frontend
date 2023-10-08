@@ -70,8 +70,7 @@ export default function GameFlow() {
   if (!data) {
     return <p>Invalid level</p>;
   }
-  console.log(level);
-  console.log(data.cardName);
+  
   return (
     <>
       <Arrows />

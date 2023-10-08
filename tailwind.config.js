@@ -1,26 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-const { nextui } = require("@nextui-org/react");
-// const plugin = require("tailwindcss/plugin");
 
-// const Myclass = plugin(function ({ addUtilities }) {
-//   addUtilities({
-//     ".my-rotate-y-180": {
-//       transform: "rotateY(180deg)",
-//     },
-//     ".preserve-3d": {
-//       transformStyle: "preserve-3d",
-//     },
-//     ".perspective": {
-//       perspective: "1000px",
-//     },
-//     ".backface-hidden": {
-//       backfaceVisibility: "hidden",
-//     },
-//   });
-// });
+
+const { nextui } = require("@nextui-org/react");
 
 export default {
+  mode: 'jit',
   content: [
+    "./public/*",
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
@@ -33,8 +19,15 @@ export default {
     },
     extend: {
       backgroundImage: {
-        StageBackground:
-          "url('./src/assets/images/StageCardImage/Stage=Cloud.png')",
+        bg1: "url('/background/bg1.png')",
+        bg2: "url('/background/bg2.png')",
+        bg3: "url('/background/bg3.png')",
+        bg4: "url('/background/bg4.png')",
+        bg5: "url('/background/bg5.png')",
+        bg6: "url('/background/bg6.png')",
+        bg7: "url('/background/bg7.png')",
+        bg8: "url('/background/bg8.png')",
+        bg9: "url('/background/bg9.png')",
         ResultBackground:
           "url('./src/assets/images/StageCardImage/Stage=Ocean.png')",
       },

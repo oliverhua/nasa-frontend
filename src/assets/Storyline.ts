@@ -1,4 +1,4 @@
-export const levelData: Record<number, LevelDataType> = {
+export const levelData = {
   1: {
     message: "(TBD)",
     imageSrc: "./src/assets/images/StageCardImage/originalSize/Rain.png",
@@ -287,7 +287,7 @@ export const levelData: Record<number, LevelDataType> = {
 export type levelNumType = keyof typeof levelData;
 
 interface BaseOutdegree {
-  id: number;
+  id: levelNumType;
   choiceMessage: string;
   informationMessage: string;
   informationVideo: string;

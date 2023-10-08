@@ -1,10 +1,14 @@
 import GameFlow from "./GameFlow";
-// import GameProgress from "./components/GameProgress";
-// import GameBackground from "../../assets/images/StageCardImage/Stage=Cloud.png"
-
+import { useLevel } from "@/contexts/LevelContext";
+import { backgroundDict, BackgroundType } from "@/assets/BackGroundCollection";
 export default function Play() {
+  const { level } = useLevel();
+  const bgName = `bg${level}` as BackgroundType;
   return (
-    <div className="h-screen w-screen flex flex-col overflow-hidden bg-center rounded-none bg-cover bg-[url('./src/assets/images/StageCardImage/Stage=Cloud.png')]">
+    <div
+      style={{ "--image-url": `url(${backgroundDict[bgName]})` } as any}
+      className={`h-screen w-screen flex flex-col overflow-hidden bg-center rounded-none bg-[image:var(--image-url)] bg-cover transition-all duration-500`}
+    >
       <div className="h-24"></div>
       <div className="flex-grow overflow-y-auto scrollbar-hide">
         <GameFlow />
